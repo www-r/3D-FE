@@ -2,12 +2,13 @@
   "name": "3d-fe",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "cz"
+    "commit": "git-cz"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -33,11 +34,13 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-customizable"
+      "path": "node_modules/cz-git",
+      "useEmoji": true
     }
   },
   "devDependencies": {
     "commitizen": "^4.3.0",
-    "cz-customizable": "^7.0.0"
+    "cz-customizable": "^7.0.0",
+    "cz-git": "^1.6.1"
   }
 }
