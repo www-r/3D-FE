@@ -1,3 +1,3 @@
 export default function MyAssetsPage() {
-  return <div>MyAssetsPage</div>;
+  return <div>MyAssetsPage</div>
 }
