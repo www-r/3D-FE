@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SideNav />
             <div className="w-full">
               <Header />
-              <main className="h-[calc(100vh-104px)]">{children}</main>
+              <main className="h-[calc(100vh-104px)] bg-bg-2">{children}</main>
               <Footer />
             </div>
           </div>
