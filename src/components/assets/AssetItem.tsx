@@ -1,25 +1,37 @@
-import { Asset } from "@/api/assets";
-import { formatPrice } from "@/utils/formatPrice";
+'use client'
+
+import { Asset } from '@/api/assets'
+import { formatPrice } from '@/utils/formatPrice'
+
+import Link from 'next/link'
 
 interface Props {
-  asset: Asset;
+  asset: Asset
 }
 
 export default function AssetItem({ asset }: Props) {
+  const handleClick = () => {
+    console.log('click')
+  }
+
   return (
-    <li className="w-[226px] h-[358px] ">
+    <li
+      onClick={handleClick}
+      className="w-[226px] h-[358px] hover:cursor-pointer focus:bg-#fff  focus:outline-none"
+    >
       <div className="rounded bg-gray-100 h-[268px]"></div>
       <div>
-        <div>
-          <span>4.9(38k) | </span>
+        <div className="text-neutral-navy-200">
+          <span>4.9(38k)</span>
+          <span className="text-transparents-navy"> | </span>
           <span>612k</span>
         </div>
-        <h3>{asset.title}</h3>
+        <h3 className="text-neutral-navy-100">{asset.title}</h3>
         <div className="flex justify-between">
-          <p> {formatPrice(asset.price)}</p>
-          <p> 70%</p>
+          <p className="text-neutral-white-0">{formatPrice(asset.price)}</p>
+          <p className="text-primary-newlloyd-button">70%</p>
         </div>
       </div>
     </li>
-  );
+  )
 }

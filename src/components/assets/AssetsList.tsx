@@ -1,8 +1,8 @@
-import { Asset } from "@/api/assets";
-import AssetItem from "./AssetItem";
+import { Asset } from '@/api/assets'
+import AssetItem from './AssetItem'
 
 interface Props {
-  assets: Asset[];
+  assets: Asset[]
 }
 
 export default function AssetsList({ assets }: Props) {
@@ -12,5 +12,5 @@ export default function AssetsList({ assets }: Props) {
         <AssetItem key={asset.id} asset={asset} />
       ))}
     </ul>
-  );
+  )
 }
