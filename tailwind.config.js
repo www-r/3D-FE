@@ -16,6 +16,7 @@ module.exports = {
           blue: '#3399FF',
           darkblue: '#237FDB',
           'darkblue-hover': '#0E6DCC',
+          'newlloyd-button': '#248FEF',
         },
         point: {
           red: '#933224',
@@ -32,8 +33,8 @@ module.exports = {
           4: '#151719',
         },
         neutral: {
-          'white-50': '#FFF',
-          'white-100': '#FCFCFC',
+          'white-0': '#FFF',
+          'white-50': '#FCFCFC',
           'navy-100': '#C7D1DB',
           'navy-200': '#A4AFBA',
           'navy-300': '#737C85',
