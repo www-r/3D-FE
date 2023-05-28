@@ -1,3 +1,3 @@
 export default function PaymentHistory() {
-  return <div>PaymentHistory</div>;
+  return <div>PaymentHistory</div>
 }
