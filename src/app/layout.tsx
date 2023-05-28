@@ -23,7 +23,7 @@ export default function RootLayout({
       <body>
         <ReactQueryProvider>
           {/* <ReduxProviders> */}
-          <div className="flex h-screen w-screen">
+          <div className="flex h-screen">
             <SideNav />
             <div className="w-full">
               <Header />
