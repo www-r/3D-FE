@@ -1,10 +1,10 @@
 import Header from '@/components/common/Header'
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
-import Footer from '@/components/common/Footer'
 import SideNav from '@/components/common/SideNav'
 import ReactQueryProvider from '@/reactQuery/Provider'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ReduxProviders } from '@/store/Provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,17 +18,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko" className={inter.className}>
       <body>
         <ReactQueryProvider>
-          {/* <ReduxProviders> */}
-          <div className="flex h-screen">
-            <SideNav />
-            <div className="w-full">
-              <Header />
-              <main className="h-[calc(100vh-104px)] bg-bg-2">{children}</main>
-              <Footer />
+          <ReduxProviders>
+            <div className="flex h-screen">
+              <SideNav />
+              <div className="w-full">
+                <Header />
+                <main className="h-[calc(100vh-3.5rem)] bg-bg-2 overflow-y-auto">{children}</main>
+              </div>
             </div>
-          </div>
-          <ReactQueryDevtools />
-          {/* </ReduxProviders> */}
+            <ReactQueryDevtools />
+          </ReduxProviders>
         </ReactQueryProvider>
       </body>
     </html>

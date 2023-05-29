@@ -1,5 +1,7 @@
 import { Asset } from '@/api/assets'
 import AssetItem from './AssetItem'
+import { RootState } from '@/store/store'
+import { useSelector } from 'react-redux'
 
 interface Props {
   assets: Asset[]
@@ -7,10 +9,12 @@ interface Props {
 
 export default function AssetsList({ assets }: Props) {
   return (
-    <ul className="mt-6 grid gap-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-6">
+    <ul className="flex gap-2 flex-wrap">
       {assets.map((asset) => (
         <AssetItem key={asset.id} asset={asset} />
       ))}
     </ul>
   )
 }
+
+//mt-6 grid gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6

@@ -19,7 +19,7 @@ export default function Drawer({ children }: Props) {
   }
 
   return isOpen ? (
-    <div className="w-[1209px] h-screen bg-blue-300">
+    <div className="min-w-[711px] h-full bg-blue-300">
       <div onClick={handleCloseDrawer}>닫기</div>
       <section>{children}</section>
     </div>
