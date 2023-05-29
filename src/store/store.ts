@@ -1,12 +1,13 @@
-// "use client";
+'use client'
 
-// import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit'
+import drawerReducer from './drawerSlice'
 
-// export const store = configureStore({
-//   reducer: {
+export const store = configureStore({
+  reducer: {
+    drawer: drawerReducer,
+  },
+})
 
-//   },
-// });
-
-// export type RootState = ReturnType<typeof store.getState>;
-// export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
