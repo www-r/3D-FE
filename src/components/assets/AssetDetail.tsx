@@ -1,3 +1,9 @@
+import AssetDetailNav from './AssetDetailNav'
+
 export default function AssetDetail() {
-  return <div>내용</div>
+  return (
+    <div>
+      <AssetDetailNav />
+    </div>
+  )
 }
