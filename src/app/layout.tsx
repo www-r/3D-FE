@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ReactQueryProvider>
           <ReduxProviders>
-            <div className="flex h-screen">
+            <div className="flex h-screen relative">
               <SideNav />
               <div className="w-full">
                 <Header />

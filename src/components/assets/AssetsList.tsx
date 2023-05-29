@@ -9,7 +9,7 @@ interface Props {
 
 export default function AssetsList({ assets }: Props) {
   return (
-    <ul className="flex gap-2 flex-wrap">
+    <ul className="flex gap-2 flex-wrap ">
       {assets.map((asset) => (
         <AssetItem key={asset.id} asset={asset} />
       ))}
