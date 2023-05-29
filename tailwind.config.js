@@ -5,6 +5,27 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontSize: {
+      '3xs': '0.125rem',
+      '2xs': '0.25rem',
+      xs: '0.5rem',
+      sm: [
+        '0.75rem',
+        {
+          fontWeight: '400',
+          lineHeight: '1.25rem',
+        },
+      ],
+      base: [
+        '1rem',
+        {
+          fontWeight: '500',
+          lineHeight: '1.5rem',
+        },
+      ],
+      lg: '1.5rem',
+      xl: '2rem',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -13,7 +34,7 @@ module.exports = {
       colors: {
         primary: {
           'blue-900': '#0F2042',
-          blue: '#3399FF',
+          main: '#3399FF',
           darkblue: '#237FDB',
           'darkblue-hover': '#0E6DCC',
           'newlloyd-button': '#248FEF',
@@ -46,9 +67,10 @@ module.exports = {
         },
         transparent: {
           gray: '#EBECF0',
-          navy: '#FAFBFC',
+          'navy-15': '#FAFBFC',
+          'navy-30': 'rgba(159, 173, 188, 0.3)',
+          blue: '#60AFFF',
           darkblue: '#237FDB',
-          'very-week-navy': '#FAFBFC',
         },
       },
     },
