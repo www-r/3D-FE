@@ -1,6 +1,7 @@
 'use client'
 
 import { Asset } from '@/api/assets'
+import { setClickedAsset } from '@/store/clickedAssetSlice'
 import { openDrawer } from '@/store/drawerSlice'
 import { formatPrice } from '@/utils/formatPrice'
 import { useDispatch } from 'react-redux'
@@ -13,6 +14,7 @@ export default function AssetItem({ asset }: Props) {
   const dispatch = useDispatch()
 
   const handleClick = () => {
+    dispatch(setClickedAsset(asset))
     dispatch(openDrawer())
   }
   return (
