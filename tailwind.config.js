@@ -6,25 +6,25 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      '3xs': '0.125rem',
-      '2xs': '0.25rem',
-      xs: '0.5rem',
+      '3xs': '0.2rem',
+      '2xs': '0.4em',
+      xs: '0.8rem',
       sm: [
-        '0.75rem',
+        '1.2rem',
         {
           fontWeight: '400',
           lineHeight: '1.25rem',
         },
       ],
       base: [
-        '1rem',
+        '1.6rem',
         {
           fontWeight: '500',
           lineHeight: '1.5rem',
         },
       ],
-      lg: '1.5rem',
-      xl: '2rem',
+      lg: '2.4rem',
+      xl: '3.2rem',
     },
     extend: {
       backgroundImage: {
