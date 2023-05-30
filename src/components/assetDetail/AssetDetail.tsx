@@ -9,7 +9,7 @@ export default function AssetDetail() {
 
   return (
     <div>
-      <AssetDetailNav setSelectedTab={setSelectedTab} />
+      <AssetDetailNav selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
       {selectedTab ? (
         <>
           <div className="h-[52.3rem] bg-bg-2 border-transparent-navy-30 border-b">three.js</div>
