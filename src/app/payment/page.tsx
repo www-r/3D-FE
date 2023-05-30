@@ -1,3 +1,5 @@
+import Layout from '@/components/common/Layout'
+
 export default function PaymentPage() {
-  return <div>PaymentPage</div>
+  return <Layout>PaymentPag</Layout>
 }

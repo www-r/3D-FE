@@ -1,13 +1,13 @@
-'use client'
-
 import { closeDrawer } from '@/store/drawerSlice'
 import { useDispatch } from 'react-redux'
 
 interface Props {
   setSelectedTab: (prev: boolean) => void
+  selectedTab: boolean
 }
 
-export default function AssetDetailNav({ setSelectedTab }: Props) {
+export default function AssetDetailNav({ setSelectedTab, selectedTab }: Props) {
+  console.log({ selectedTab })
   const dispatch = useDispatch()
 
   const handleCloseDrawer = () => {
@@ -18,13 +18,17 @@ export default function AssetDetailNav({ setSelectedTab }: Props) {
     <div className="w-full flex h-[5rem] text-neutral-200">
       <div
         onClick={() => setSelectedTab(true)}
-        className="w-[31.5rem] flex justify-center items-center  border-transparent-navy-30 border-b-[3px] hover:bg-bg-2 hover:border-primary-main"
+        className={`${
+          selectedTab ? 'bg-bg-2 border-primary-main' : 'border-transparent-navy-30'
+        } w-[31.5rem] flex justify-center items-center  border-b-[3px] hover:bg-bg-2 hover:border-primary-main`}
       >
         <button>Asset Detail</button>
       </div>
       <div
         onClick={() => setSelectedTab(false)}
-        className="w-[31.5rem] flex justify-center items-center border-transparent-navy-30 border-b-[3px] hover:bg-bg-2 hover:border-primary-main"
+        className={`${
+          !selectedTab ? 'bg-bg-2 border-primary-main' : 'border-transparent-navy-30'
+        } w-[31.5rem] flex justify-center items-center  border-b-[3px] hover:bg-bg-2 hover:border-primary-main`}
       >
         <button>
           Review <span>(0)</span>
