@@ -24,22 +24,22 @@ export default function AssetDetailContent() {
         </div>
       </div>
       <div>
-        <div className="h-[2.75rem] border-transparent-navy-30 border-t">
+        <div className="h-[4.4rem] border-transparent-navy-30 border-t">
           <h3>확장자</h3>
         </div>
-        <div className="h-[2.75rem] border-transparent-navy-30 border-t">
+        <div className="h-[4.4rem] border-transparent-navy-30 border-t">
           <h3>평점</h3>
         </div>
-        <div className="h-[2.75rem] border-transparent-navy-30 border-t">
+        <div className="h-[4.4rem] border-transparent-navy-30 border-t">
           <h3>방문자 수</h3>
         </div>
-        <div className="h-[2.75rem] border-transparent-navy-30 border-t">
+        <div className="h-[4.4rem] border-transparent-navy-30 border-t">
           <h3>찜하기 수</h3>
         </div>
-        <div className="h-[2.75rem] border-transparent-navy-30 border-t">
+        <div className="h-[4.4rem] border-transparent-navy-30 border-t">
           <h3>파일 크기</h3>
         </div>
-        <div className="h-[2.75rem] border-transparent-navy-30 border-y">
+        <div className="h-[4.4rem] border-transparent-navy-30 border-y">
           <h3>제작자</h3>
         </div>
       </div>

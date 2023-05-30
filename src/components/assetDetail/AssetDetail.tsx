@@ -12,7 +12,7 @@ export default function AssetDetail() {
       <AssetDetailNav setSelectedTab={setSelectedTab} />
       {selectedTab ? (
         <>
-          <div className="h-[523px] bg-bg-2 border-transparent-navy-30 border-b">three.js</div>
+          <div className="h-[52.3rem] bg-bg-2 border-transparent-navy-30 border-b">three.js</div>
           <AssetDetailContent />
         </>
       ) : (

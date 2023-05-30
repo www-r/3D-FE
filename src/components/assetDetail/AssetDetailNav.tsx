@@ -15,23 +15,23 @@ export default function AssetDetailNav({ setSelectedTab }: Props) {
   }
 
   return (
-    <div className="w-full flex h-[50px] text-neutral-200">
+    <div className="w-full flex h-[5rem] text-neutral-200">
       <div
         onClick={() => setSelectedTab(true)}
-        className="w-[315px] flex justify-center items-center  border-transparent-navy-30 border-b-[3px] hover:bg-bg-2 hover:border-primary-main"
+        className="w-[31.5rem] flex justify-center items-center  border-transparent-navy-30 border-b-[3px] hover:bg-bg-2 hover:border-primary-main"
       >
         <button>Asset Detail</button>
       </div>
       <div
         onClick={() => setSelectedTab(false)}
-        className="w-[315px] flex justify-center items-center border-transparent-navy-30 border-b-[3px] hover:bg-bg-2 hover:border-primary-main"
+        className="w-[31.5rem] flex justify-center items-center border-transparent-navy-30 border-b-[3px] hover:bg-bg-2 hover:border-primary-main"
       >
         <button>
           Review <span>(0)</span>
         </button>
       </div>
       <div
-        className="w-[80px] flex justify-center items-center  border-transparent-navy-30 border-b-[3px] hover:bg-bg-2 hover:border-primary-main"
+        className="w-[8rem] flex justify-center items-center  border-transparent-navy-30 border-b-[3px] hover:bg-bg-2 hover:border-primary-main"
         onClick={handleCloseDrawer}
       >
         <button>닫기</button>
