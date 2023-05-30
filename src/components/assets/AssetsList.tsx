@@ -1,7 +1,5 @@
 import { Asset } from '@/api/assets'
 import AssetItem from './AssetItem'
-import { RootState } from '@/store/store'
-import { useSelector } from 'react-redux'
 
 interface Props {
   assets: Asset[]
