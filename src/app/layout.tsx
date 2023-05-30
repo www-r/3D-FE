@@ -21,9 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ReduxProviders>
             <div className="flex h-screen relative">
               <SideNav />
-              <div className="w-full">
+              <div className="w-full ml-[24.4rem]">
                 <Header />
-                <main className="h-[calc(100vh-3.5rem)] bg-bg-2 overflow-y-auto">{children}</main>
+                <main className="min-h-[calc(100vh-7.2rem)] mt-[7.2rem] bg-bg-2">{children}</main>
               </div>
             </div>
             <ReactQueryDevtools />

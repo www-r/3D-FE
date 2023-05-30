@@ -11,7 +11,7 @@ export default async function HomePage() {
       <section className="px-[23px] pt-8 w-full">
         <AssetsList assets={assets} />
       </section>
-      <section className="sticky top-0 h-full">
+      <section className="sticky top-[7.2rem] h-[calc(100vh-7.2rem)]">
         <Drawer>
           <AssetDetail/>
         </Drawer>
