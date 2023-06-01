@@ -6,8 +6,14 @@ export interface Asset {
   title: string
   price: number
   discount: number
+  categories: Categories
   createdAt: string
   updatedAt: string
+}
+
+interface Categories {
+  title: string
+  tags: string[]
 }
 
 export async function getAllAssets(): Promise<Asset[]> {

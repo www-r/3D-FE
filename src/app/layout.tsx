@@ -1,11 +1,9 @@
 import Header from '@/components/common/Header'
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
-import SideNav from '@/components/common/SideNav'
 import ReactQueryProvider from '@/reactQuery/Provider'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ReduxProviders } from '@/store/Provider'
-import { useParams } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
