@@ -41,6 +41,10 @@
   "devDependencies": {
     "commitizen": "^4.3.0",
     "cz-customizable": "^7.0.0",
-    "cz-git": "^1.6.1"
+    "cz-git": "^1.6.1",
+    "msw": "^1.2.1"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
