@@ -8,6 +8,10 @@ const initialState: Asset = {
   discount: 0,
   createdAt: '',
   updatedAt: '',
+  categories: {
+    title: '',
+    tags: [],
+  },
 }
 
 const clickedAssetSlice = createSlice({
