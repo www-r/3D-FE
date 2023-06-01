@@ -67,8 +67,10 @@ module.exports = {
         },
         transparent: {
           gray: '#EBECF0',
-          'navy-15': '#FAFBFC',
+          navy: '#FAFBFC',
+          'navy-15': 'rgba(250, 251, 252, 0.15)',
           'navy-30': 'rgba(159, 173, 188, 0.3)',
+          'navy-second': '#9FADBC',
           blue: '#60AFFF',
           darkblue: '#237FDB',
         },
