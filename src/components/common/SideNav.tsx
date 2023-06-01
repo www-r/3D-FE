@@ -7,7 +7,7 @@ export default function SideNav() {
   return (
     <aside className="fixed h-screen h min-w-[24.4rem] z-10 bg-bg-1 border-r border-solid border-transparent-navy-30">
       <div className="logo">
-        <Image src="/logo.svg" alt="로고" width={156} height={36} />
+        <Image src="/logo-title.svg" alt="로고" width={156} height={36} />
       </div>
       <div>
         <Image src="/icons/icon=minimize menu.svg" alt="메뉴" width={32} height={32} />
