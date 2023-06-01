@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Kid-F-0001",
+    "price": 19800,
+    "discount": 0,
+    "categories": {
+      "title": "man",
+      "tags": [
+        "doctor",
+        "jeans",
+        "shirt",
+        "shirteeee",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt",
+        "shirt"
+      ]
+    },
+    "createdAt": "2021-06-01T00:00:00.000Z",
+    "updatedAt": "2021-06-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "title": "Kid-F-0002",
+    "price": 9800,
+    "discount": 0,
+    "categories": { "title": "kid", "tags": ["boy", "girl"] },
+    "createdAt": "2021-06-01T00:00:00.000Z",
+    "updatedAt": "2021-06-01T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "title": "Kid-F-0003",
+    "price": 9800,
+    "discount": 0,
+    "categories": { "title": "moving", "tags": ["working", "smile"] },
+    "createdAt": "2021-06-01T00:00:00.000Z",
+    "updatedAt": "2021-06-01T00:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "title": "Kid-F-0004",
+    "price": 9800,
+    "discount": 0,
+    "categories": { "title": "moving", "tags": ["working", "smile"] },
+    "createdAt": "2021-06-01T00:00:00.000Z",
+    "updatedAt": "2021-06-01T00:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "title": "Kid-F-0005",
+    "price": 9800,
+    "discount": 0,
+    "categories": { "title": "moving", "tags": ["working", "smile"] },
+    "createdAt": "2021-06-01T00:00:00.000Z",
+    "updatedAt": "2021-06-01T00:00:00.000Z"
+  },
+  {
+    "id": 6,
+    "title": "Kid-F-0006",
+    "price": 9800,
+    "discount": 0,
+    "categories": { "title": "moving", "tags": ["working", "smile"] },
+    "createdAt": "2021-06-01T00:00:00.000Z",
+    "updatedAt": "2021-06-01T00:00:00.000Z"
+  },
+  {
+    "id": 7,
+    "title": "Kid-F-0007",
+    "price": 9800,
+    "discount": 0,
+    "categories": { "title": "moving", "tags": ["working", "smile"] },
+    "createdAt": "2021-06-01T00:00:00.000Z",
+    "updatedAt": "2021-06-01T00:00:00.000Z"
+  }
+]

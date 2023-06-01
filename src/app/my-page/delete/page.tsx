@@ -1,3 +1,3 @@
 export default function AccountDeletePage() {
-  return <div>AccountDeletePage</div>;
+  return <div>AccountDeletePage</div>
 }
