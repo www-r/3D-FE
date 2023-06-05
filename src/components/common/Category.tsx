@@ -9,23 +9,13 @@ import { setSelectedCategory } from '@/store/setSelectedCategory'
 import { Category } from '@/interface/category'
 import { getAllCategories } from '@/api/category'
 
-export default function Category() {
-  const [categories, setCategories] = useState<Category[]>([])
+interface CategoryProps {
+  data: Category[]
+}
+
+export default function Category({ data }: CategoryProps) {
   const selectedCategory = useSelector((state: RootState) => state.category.selectedCategory)
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    async function fetchCategories() {
-      try {
-        const data = await getAllCategories()
-        setCategories(data)
-      } catch (error) {
-        console.error('카테고리 가져오기 오류:', error)
-      }
-    }
-
-    fetchCategories()
-  }, [])
 
   const handleCategoryClick = (category: Category) => {
     if (selectedCategory === category.name) return
@@ -33,11 +23,15 @@ export default function Category() {
   }
 
   return (
-    <ul>
-      {categories.map((category) => (
+    <ul className="py-[0.4rem] leading-[2.4rem] text-sm">
+      {data.map((category) => (
         <li key={category.name}>
-          <Link href="#" onClick={() => handleCategoryClick(category)}>
-            <p>
+          <Link
+            href="#"
+            onClick={() => handleCategoryClick(category)}
+            className="flex justify-between w-full text-neutral-navy-200 py-[0.2rem] pl-[2.4rem] pr-[1.2rem]"
+          >
+            <p className="flex">
               {category.name}{' '}
               {category.subcategories.length > 0 && (
                 <Image
@@ -48,15 +42,18 @@ export default function Category() {
                 />
               )}
             </p>
-            <span>{category.totalCount}</span>
+            <span>{category.totalCount.toLocaleString()}</span>
           </Link>
           {selectedCategory === category.name && (
-            <ul>
+            <ul className="bg-bg-2">
               {category.subcategories.map((subcategory) => (
                 <li key={subcategory.name}>
-                  <Link href="#">
+                  <Link
+                    href="#"
+                    className="flex justify-between w-full text-neutral-navy-200 py-[0.2rem] pl-[3.2rem] pr-[1.2rem]"
+                  >
                     <p>{subcategory.name}</p>
-                    <span>{subcategory.count}</span>
+                    <span>{subcategory.count.toLocaleString()}</span>
                   </Link>
                 </li>
               ))}
