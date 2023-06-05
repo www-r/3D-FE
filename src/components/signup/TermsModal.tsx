@@ -80,16 +80,18 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
 
         {/* 닫기, 동의 버튼 */}
         <div className="flex justify-center">
-          <div className="flex w-2/5 my-6">
+          <div className="flex w-[36%] my-6">
             <button
               type="reset"
-              className="w-full h-[3.1rem] mx-4 rounded-full text-neutral-white-50 bg-primary-darkblue-hover focus:outline-none text-sm px-5 py-3 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              onClick={onClose}
+              className="w-full h-[3.1rem] mx-2 rounded-full text-neutral-white-50 bg-none text-sm px-5 py-3 text-center dark:border dark:border-primary-darkblue-hover"
             >
               Close
             </button>
             <button
               type="submit"
-              className="w-full h-[3.1rem] mx-4 rounded-full text-neutral-white-50 bg-primary-darkblue-hover focus:outline-none text-sm px-5 py-3 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              onClick={onClose}
+              className="w-full h-[3.1rem] mx-2 rounded-full text-neutral-white-50 bg-primary-darkblue-hover focus:outline-none text-sm px-5 py-3 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               Accept
             </button>
