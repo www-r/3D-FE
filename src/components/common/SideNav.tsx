@@ -31,7 +31,7 @@ export default async function SideNav() {
             <li>
               <Link href="#" className="flex p-[0.8rem] pl-[2.4rem] text-neutral-navy-200">
                 <Image
-                  src="/icons/assetList.svg"
+                  src="/icons/box.svg"
                   alt="개별 에셋"
                   width={20}
                   height={20}
@@ -43,7 +43,7 @@ export default async function SideNav() {
             <li>
               <Link href="#" className="flex p-[0.8rem] pl-[2.4rem] text-neutral-navy-200">
                 <Image
-                  src="/icons/assetList.svg"
+                  src="/icons/packageAsset.svg"
                   alt="개별 에셋"
                   width={20}
                   height={20}

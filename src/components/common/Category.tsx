@@ -32,9 +32,15 @@ export default function Category({ data }: CategoryProps) {
             className="flex justify-between w-full text-neutral-navy-200 py-[0.2rem] pl-[2.4rem] pr-[1.2rem]"
           >
             <p className="flex">
-              {category.name}{' '}
+              {category.name}
               {category.subcategories.length > 0 && (
-                <Image src="/icons/arrowDropDown.svg" alt="아래화살표" width={18} height={18} />
+                <Image
+                  src="/icons/arrowDropDown.svg"
+                  alt="아래화살표"
+                  width={18}
+                  height={18}
+                  className="ml-[0.2rem]"
+                />
               )}
             </p>
             <span>{category.totalCount.toLocaleString()}</span>
