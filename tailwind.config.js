@@ -6,25 +6,29 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      '3xs': '0.125rem',
-      '2xs': '0.25rem',
-      xs: '0.5rem',
+      '3xs': '0.2rem',
+      '2xs': '0.4em',
+      xs: '0.8rem',
       sm: [
-        '0.75rem',
+        '1.2rem',
         {
           fontWeight: '400',
           lineHeight: '1.25rem',
         },
       ],
+      mm: [
+        '1.4rem',
+        { fontWeight: '500' }
+      ],
       base: [
-        '1rem',
+        '1.6rem',
         {
           fontWeight: '500',
           lineHeight: '1.5rem',
         },
       ],
-      lg: '1.5rem',
-      xl: '2rem',
+      lg: '2.4rem',
+      xl: '3.2rem',
     },
     extend: {
       backgroundImage: {
@@ -67,8 +71,10 @@ module.exports = {
         },
         transparent: {
           gray: '#EBECF0',
-          'navy-15': '#FAFBFC',
+          navy: '#FAFBFC',
+          'navy-15': 'rgba(250, 251, 252, 0.15)',
           'navy-30': 'rgba(159, 173, 188, 0.3)',
+          'navy-second': '#9FADBC',
           blue: '#60AFFF',
           darkblue: '#237FDB',
         },
@@ -76,4 +82,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
