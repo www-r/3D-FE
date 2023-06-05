@@ -34,12 +34,7 @@ export default function Category({ data }: CategoryProps) {
             <p className="flex">
               {category.name}{' '}
               {category.subcategories.length > 0 && (
-                <Image
-                  src="/icons/icon=arrow_drop_down.svg"
-                  alt="아래화살표"
-                  width={18}
-                  height={18}
-                />
+                <Image src="/icons/arrowDropDown.svg" alt="아래화살표" width={18} height={18} />
               )}
             </p>
             <span>{category.totalCount.toLocaleString()}</span>

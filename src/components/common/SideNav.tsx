@@ -13,13 +13,13 @@ export default async function SideNav() {
         <Image src="/logo-title.svg" alt="로고" width={156} height={36} />
       </div>
       <div className="flex justify-end px-8 py-[0.4rem]">
-        <Image src="/icons/icon=minimize menu.svg" alt="메뉴" width={24} height={24} />
+        <Image src="/icons/minimizeMenu.svg" alt="메뉴" width={24} height={24} />
       </div>
       <ul className="p-[0.8rem]">
         <li className="py-[0.4rem] leading-[2.4rem] border-b border-neutral-navy-200">
           <Link href="#" className="flex p-[0.8rem] text-neutral-navy-200">
             <Image
-              src="/icons/icon=asset list icon.svg"
+              src="/icons/assetList.svg"
               alt="개별 에셋"
               width={24}
               height={24}
@@ -31,7 +31,7 @@ export default async function SideNav() {
             <li>
               <Link href="#" className="flex p-[0.8rem] pl-[2.4rem] text-neutral-navy-200">
                 <Image
-                  src="/icons/icon=asset list icon.svg"
+                  src="/icons/assetList.svg"
                   alt="개별 에셋"
                   width={20}
                   height={20}
@@ -43,7 +43,7 @@ export default async function SideNav() {
             <li>
               <Link href="#" className="flex p-[0.8rem] pl-[2.4rem] text-neutral-navy-200">
                 <Image
-                  src="/icons/icon=asset list icon.svg"
+                  src="/icons/assetList.svg"
                   alt="개별 에셋"
                   width={20}
                   height={20}
@@ -58,7 +58,7 @@ export default async function SideNav() {
           <div>
             <div className="flex p-[0.8rem] text-neutral-navy-200">
               <Image
-                src="/icons/icon=list.svg"
+                src="/icons/list.svg"
                 alt="개별 에셋"
                 width={20}
                 height={20}
