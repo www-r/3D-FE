@@ -15,11 +15,11 @@ export default function AssetDetailNav({ setSelectedTab, selectedTab }: Props) {
   }
 
   return (
-    <div className="w-full flex h-[5rem] text-neutral-200 fixed top-[7.2rem]">
+    <div className="w-full flex h-[5rem] text-neutral-200 fixed top-[7.2rem] bg-bg-0">
       <div
         onClick={() => setSelectedTab(true)}
         className={`${
-          selectedTab ? 'bg-bg-2 border-primary-main' : 'border-transparent-navy-30'
+          selectedTab ? 'bg-bg-2 border-primary-main' : 'border-transparent-navy-30 '
         } w-[31.5rem] flex justify-center items-center  border-b-[0.3rem] hover:bg-bg-2 hover:border-primary-main`}
       >
         <button>Asset Detail</button>
@@ -27,7 +27,7 @@ export default function AssetDetailNav({ setSelectedTab, selectedTab }: Props) {
       <div
         onClick={() => setSelectedTab(false)}
         className={`${
-          !selectedTab ? 'bg-bg-2 border-primary-main' : 'border-transparent-navy-30'
+          !selectedTab ? 'bg-bg-2 border-primary-main ' : 'border-transparent-navy-30 '
         } w-[31.5rem] flex justify-center items-center  border-b-[0.3rem] hover:bg-bg-2 hover:border-primary-main`}
       >
         <button>
