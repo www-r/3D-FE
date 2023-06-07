@@ -12,8 +12,7 @@ module.exports = {
       sm: [
         '1.2rem',
         {
-          fontWeight: '400',
-          lineHeight: '1.25rem',
+          fontWeight: '400'
         },
       ],
       mm: [
@@ -23,9 +22,12 @@ module.exports = {
       base: [
         '1.6rem',
         {
-          fontWeight: '500',
-          lineHeight: '1.5rem',
+          fontWeight: '500'
         },
+      ],
+      sl: [
+        '1.8rem',
+        { fontWeight: '500' }
       ],
       lg: '2.4rem',
       xl: '3.2rem',
