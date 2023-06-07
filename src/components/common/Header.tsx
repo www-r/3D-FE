@@ -8,7 +8,7 @@ export default function Header() {
         <Image src="/icons/search.svg" alt="검색" width={24} height={24} />
         <input type="text" className="w-full ml-[0.8rem] bg-bg-2 text-neutral-white-50" />
       </div>
-      <ul className="flex items-center before:w-[0.2rem] before:h-[3.4rem] before:bg-transparent-navy-30 before:mr-[1rem]">
+      <ul className="flex items-center before:w-[0.2rem] before:h-[3.4rem] before:bg-transparent-navy-30 before:m-[1rem]">
         <li>
           <Link href="/wishlist" className="block p-[0.9rem]">
             <Image src="/icons/heart.svg" alt="위시리스트로" width={22} height={22} />
