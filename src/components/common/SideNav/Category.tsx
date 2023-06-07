@@ -15,6 +15,7 @@ interface CategoryProps {
 
 export default function Category({ data }: CategoryProps) {
   const selectedCategory = useSelector((state: RootState) => state.category.selectedCategory)
+  console.log(selectedCategory)
   const dispatch = useDispatch()
 
   const handleCategoryClick = (category: Category) => {
