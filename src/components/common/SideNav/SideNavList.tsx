@@ -1,8 +1,29 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '@/store/store'
+import { setSelectedCategory } from '@/store/setSelectedCategory'
+import { Subcategory, Category as typeCategory } from '@/interface/category'
 import Category from './Category'
+import Tags from './Tags'
+import { setSelectedTags } from '@/store/tagSlice'
 
-export default function SideNavList({ category }: any) {
+interface SideNavListProps {
+  category: typeCategory[]
+}
+
+export default function SideNavList({ category }: SideNavListProps) {
+  const selectedTags = useSelector((state: RootState) => state.tag.selectedTags)
+
+  const dispatch = useDispatch()
+
+  const handleSubcategoryClick = (subcategory: Subcategory) => {
+    dispatch(setSelectedTags(subcategory.tags || [])) // 서브카테고리 클릭시 해당 태그로 교체
+  }
+  console.log(selectedTags)
+
   return (
     <div>
       <div className="pl-[1.6rem]">
@@ -50,7 +71,7 @@ export default function SideNavList({ category }: any) {
             </li>
           </ul>
         </li>
-        <li className="py-[0.4rem] leading-[2.4rem] border-b border-neutral-navy-200">
+        <li className="leading-[2.4rem] border-b border-neutral-navy-200">
           <div>
             <div className="flex p-[0.8rem] text-neutral-navy-200">
               <Image
@@ -62,8 +83,11 @@ export default function SideNavList({ category }: any) {
               />
               <p>카테고리별</p>
             </div>
-            <Category data={category} />
+            <Category data={category} handleSubcategoryClick={handleSubcategoryClick} />
           </div>
+        </li>
+        <li>
+          <Tags selectedTags={selectedTags} />
         </li>
       </ul>
     </div>
