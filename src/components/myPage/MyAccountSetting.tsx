@@ -2,9 +2,20 @@
  * 마이페이지-내계정페이지
  */
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
+import AccountDeleteModal from './AccountDelete'
 
 export default function MyAccountSetting() {
+  //탈퇴 동의 체크 여부 state
+  const [deleteAccepted, setDeleteAccepted] = useState(false)
+  //모달창 출력 여부 state
+  const [showModal, setShowModal] = useState(false)
+
+  const handleModalClose = () => {
+    setShowModal(false)
+    setDeleteAccepted(false)
+  }
+
   return (
     <>
       <section className=" mb-12 flex w-[91%] items-center justify-center">
@@ -77,14 +88,20 @@ export default function MyAccountSetting() {
           </div>
           <div className="w-full border-b-2 border-transparent-navy-30"></div>
 
-          <div className="mt-6 flex">
+          <div
+            className="mt-6 flex"
+            onClick={() => {
+              setShowModal(true)
+            }}
+          >
             <a
-              href="/delete"
+              href="#"
               className="dark:text-primary-500 text-[16px] text-neutral-navy-300 underline underline-offset-4"
             >
               탈퇴하기
             </a>
           </div>
+          <AccountDeleteModal isOpen={showModal} onClose={handleModalClose} />
         </div>
       </section>
     </>
