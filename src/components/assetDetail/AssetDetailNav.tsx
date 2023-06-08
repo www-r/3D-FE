@@ -15,7 +15,7 @@ export default function AssetDetailNav({ setSelectedTab, selectedTab }: Props) {
   }
 
   return (
-    <div className="w-full flex h-[5rem] text-neutral-200 fixed top-[7.2rem] bg-bg-0">
+    <div className="w-[70.9rem] flex h-[5rem] text-neutral-200 absolute top- bg-bg-0">
       <div
         onClick={() => setSelectedTab(true)}
         className={`${
