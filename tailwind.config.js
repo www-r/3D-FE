@@ -34,10 +34,14 @@ module.exports = {
       lg: '2.4rem',
       xl: '3.2rem',
     },
+    borderRadius: {
+      'sm': '0.4rem'
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'checkbox-off': 'url(/icons/checkboxOFF.svg)',
       },
       colors: {
         primary: {

@@ -35,3 +35,7 @@ body {
 input {
   outline: none;
 }
+
+input[type='checkbox']:checked + label .bg-checkbox-off {
+  background-image: url(/icons/checkboxOn.svg);
+}
