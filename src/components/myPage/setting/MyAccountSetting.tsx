@@ -34,8 +34,8 @@ export default function MyAccountSetting() {
                   <input
                     type="text"
                     name="firstName"
-                    className="focus:ring-primary-600 focus:border-primary-600 h-[2.6rem] w-[24.3rem] rounded-lg border border-neutral-navy-300 bg-neutral-navy-950 p-2.5 text-neutral-navy-200 dark:border-gray-600 dark:bg-neutral-navy-950 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
                     placeholder="이름"
+                    className="focus:ring-primary-600 focus:border-primary-600 h-[2.6rem] w-[24.3rem] rounded-lg border border-neutral-navy-300 bg-neutral-navy-950 p-2.5 text-neutral-navy-200 dark:border-gray-600 dark:bg-neutral-navy-950 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
                   />
                 </div>
 

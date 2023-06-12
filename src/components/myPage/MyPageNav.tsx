@@ -8,7 +8,7 @@ interface Props {
 
 export default function MyPageNav({ setSelectedTab, selectedTab }: Props) {
   return (
-    <div className="absolute top-[7.2rem] mt-[2rem] flex h-[3.5rem] w-full text-neutral-200 ">
+    <div className="absolute top-[11rem] my-8 flex h-[3.5rem] w-full text-neutral-200 ">
       <div
         onClick={() => setSelectedTab(true)}
         className={`${
