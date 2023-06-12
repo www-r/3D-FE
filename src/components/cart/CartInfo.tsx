@@ -4,7 +4,7 @@ import { formatPrice } from '@/utils/formatPrice'
 
 export default function CartInfo() {
   return (
-    <div className="sticky mr-[2.4rem] flex w-[25.3%] min-w-[26rem] flex-col justify-between border-l border-transparent-navy-30 px-[1.432%] py-[1.671%]">
+    <div className="sticky mr-[2.4rem] flex w-[23.869%] min-w-[26rem] flex-col justify-between border-l border-transparent-navy-30 px-[1.432%] py-[1.671%]">
       <div>
         <h2 className="mb-[2.4rem] text-lg font-bold">결제 정보</h2>
         <ul className="text-ms">
