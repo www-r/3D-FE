@@ -5,8 +5,8 @@ import CartInfo from '@/components/cart/CartInfo'
 export default function CartPage() {
   return (
     <Layout>
-      <div className="flex min-h-[calc(100vh-7.2rem)] pr-[2.4rem] pt-[2.4rem] text-neutral-navy-100">
-        <div className="w-[75.79%] px-[2.2rem] py-[4rem]">
+      <div className="flex min-h-[calc(100vh-7.2rem)] pt-[2.4rem] text-neutral-navy-100">
+        <div className="w-[74.7%] px-[2.2rem] py-[4rem]">
           <div className="flex items-center justify-between">
             <div className="flex items-baseline">
               <h2 className="text-lg font-bold">장바구니</h2>
