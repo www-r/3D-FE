@@ -5,8 +5,8 @@
 import React, { useState } from 'react'
 
 import MyPageNav from './MyPageNav'
-import MyOrderHistory from './MyOrderHistory'
-import MyAccountSetting from './MyAccountSetting'
+import MyAccountSetting from './setting/MyAccountSetting'
+import MyOrderHistory from './orderHistory/MyOrderHistroy'
 
 export default function MyPageAll() {
   const [selectedTab, setSelectedTab] = useState(true)
