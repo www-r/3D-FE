@@ -6,8 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { RootState, AppDispatch } from '@/store/store'
 import { setSelectedCategory } from '@/store/setSelectedCategory'
-import { Category, Subcategory } from '@/interface/category'
-import { getAllCategories } from '@/api/category'
+import { Category, Subcategory } from '@/api/interface/category'
+import { getAllCategories } from '@/api/service/category'
 import { setSelectedTags } from '@/store/tagSlice'
 
 interface CategoryProps {
@@ -30,13 +30,13 @@ export default function Category({ data, handleSubcategoryClick }: CategoryProps
   }
 
   return (
-    <ul className="py-[0.4rem] leading-[2.4rem] text-sm">
+    <ul className="py-[0.4rem] text-sm leading-[2.4rem]">
       {data.map((category) => (
         <li key={category.name}>
           <Link
             href="#"
             onClick={() => handleCategoryClick(category)}
-            className="flex justify-between w-full text-neutral-navy-200 py-[0.2rem] pl-[2.4rem] pr-[1.2rem]"
+            className="flex w-full justify-between py-[0.2rem] pl-[2.4rem] pr-[1.2rem] text-neutral-navy-200"
           >
             <p className="flex">
               {category.name}
@@ -59,7 +59,7 @@ export default function Category({ data, handleSubcategoryClick }: CategoryProps
                   <Link
                     href="#"
                     onClick={() => handleSubcategoryClick(subcategory)}
-                    className="flex justify-between w-full text-neutral-navy-200 py-[0.2rem] pl-[3.2rem] pr-[1.2rem]"
+                    className="flex w-full justify-between py-[0.2rem] pl-[3.2rem] pr-[1.2rem] text-neutral-navy-200"
                   >
                     <p>{subcategory.name}</p>
                     <span>{subcategory.count.toLocaleString()}</span>
