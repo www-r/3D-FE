@@ -1,3 +1,6 @@
+/**
+ * 에셋 관련 API
+*/
 import { readFile } from 'fs/promises'
 import path from 'path'
 
