@@ -3,11 +3,86 @@ import { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { ko } from 'date-fns/esm/locale' //한국어 설정
+import s from './MyOrderCalendar.module.css'
 import Image from 'next/image'
+import { getMonth, getYear } from 'date-fns'
+
+type CustomHeaderProps = {
+  date: Date
+  changeYear: (year: number) => void
+  decreaseMonth: () => void
+  increaseMonth: () => void
+  prevMonthButtonDisabled: boolean
+  nextMonthButtonDisabled: boolean
+}
 
 export default function MyOrderCalendar() {
   const [startDate, setStartDate] = useState<Date | null>(new Date())
   const [endDate, setEndDate] = useState<Date | null>(new Date())
+
+  const YEARS = Array.from(
+    { length: getYear(new Date()) + 1 - 2000 },
+    (_, i) => getYear(new Date()) - i,
+  )
+  const MONTHS = [
+    '1월',
+    '2월',
+    '3월',
+    '4월',
+    '5월',
+    '6월',
+    '7월',
+    '8월',
+    '9월',
+    '10월',
+    '11월',
+    '12월',
+  ]
+
+  // react-datePicker Header부분 커스텀 함수
+  const customRenderHeader: React.FC<CustomHeaderProps> = ({
+    date,
+    changeYear,
+    decreaseMonth,
+    increaseMonth,
+    prevMonthButtonDisabled,
+    nextMonthButtonDisabled,
+  }) => {
+    return (
+      <div className={s.customHeaderContainer}>
+        <button
+          type="button"
+          onClick={decreaseMonth}
+          className={s.monthButton}
+          disabled={prevMonthButtonDisabled}
+        >
+          ⟨
+        </button>
+        <div className={s.title}>
+          <select
+            value={getYear(date)}
+            className={s.year}
+            onChange={({ target: { value } }) => changeYear(+value)}
+          >
+            {YEARS.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <span className={s.month}>{MONTHS[getMonth(date)]}</span>
+        </div>
+        <button
+          type="button"
+          onClick={increaseMonth}
+          className={s.monthButton}
+          disabled={nextMonthButtonDisabled}
+        >
+          ⟩{' '}
+        </button>
+      </div>
+    )
+  }
 
   return (
     <div className="mb-8 mt-6 flex w-[65%] text-neutral-navy-200">
@@ -24,6 +99,11 @@ export default function MyOrderCalendar() {
           startDate={startDate}
           endDate={endDate}
           onChange={(date) => setStartDate(date)}
+          calendarClassName={s.calendar} // 달력 팝업 스타일링
+          renderCustomHeader={customRenderHeader}
+          dayClassName={(d) =>
+            d.getDate() === startDate!.getDate() ? s.selectedDay : s.unselectedDay
+          }
           className="border-non h-[2.3rem] bg-neutral-navy-950 pl-2.5 text-[1.6rem] text-neutral-navy-200"
         />
         <Image src="/icons/calendar.svg" alt="calendar icon" width={20} height={20} />
@@ -44,6 +124,11 @@ export default function MyOrderCalendar() {
           startDate={startDate}
           endDate={endDate}
           onChange={(date) => setEndDate(date)}
+          calendarClassName={s.calendar} // 달력 팝업 스타일링
+          renderCustomHeader={customRenderHeader}
+          dayClassName={(d) =>
+            d.getDate() === startDate!.getDate() ? s.selectedDay : s.unselectedDay
+          }
           className="border-non h-[2.3rem] bg-neutral-navy-950 pl-2.5 text-[1.6rem] text-neutral-navy-200"
         />
         <Image src="/icons/calendar.svg" alt="calendar icon" width={20} height={20} />
