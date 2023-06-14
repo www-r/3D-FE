@@ -12,7 +12,7 @@ export default async function HomePage() {
     <Layout>
       <div className="flex">
         <div className="h-[100%]">
-          <section className="min-h-[calc(100vh-12.3rem)] px-[2.3rem] pt-8 w-full">
+          <section className="min-h-[calc(100vh-12.3rem)] w-full px-[2.3rem] pt-8">
             <AssetsList assets={assets} />
           </section>
           <Footer />
