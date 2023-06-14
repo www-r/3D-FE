@@ -1,0 +1,46 @@
+.calendar {
+  border: none;
+  background-color: #171a1d;
+  color: #737c85;
+}
+
+.customHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px 0 24px;
+  background-color: #171a1d;
+  border: none;
+  color: #737c85;
+  margin-bottom: 8px;
+
+  .monthButton {
+    color: #737c85;
+    font-weight: 600;
+  }
+  .title {
+    .year {
+      background-color: #171a1d;
+      margin-right: 12px;
+      border: none;
+    }
+    .month {
+      margin-right: 12px;
+    }
+  }
+}
+
+.selectedDay,
+.unselectedDay {
+  color: #737c85;
+  padding: 5px 1px 0 0;
+  width: 32px;
+  height: 32px;
+}
+
+.selectedDay {
+  background-color: #3399ff;
+  border-radius: 50%;
+  color: #fcfcfc;
+}
