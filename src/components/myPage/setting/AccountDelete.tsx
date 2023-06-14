@@ -26,15 +26,15 @@ const AccountDeleteModal: React.FC<AccountDeleteModalProps> = ({ isOpen, onClose
       {/* 모달 */}
       <div
         ref={modalRef}
-        className="m-[4.3rem] h-[65%] w-[58%] justify-center rounded-xl bg-black px-12"
+        className="rounded-xl m-[4.3rem] h-[68%] w-[58%] justify-center bg-black px-12"
       >
-        <div className="mb-6 mt-12 flex justify-center">
+        <div className="mb-6 mt-8 flex justify-center">
           <p className="mx-10 my-6 mb-4 text-[14px] text-sm text-neutral-navy-100">
             가입 날짜 : <span className=""> 년. 월. 일 / </span>
             계정 이메일 : <span className=""> email@email.com</span>
           </p>
         </div>
-        <form className="h-full w-full" action="">
+        <form action="">
           {/* 탈퇴사유 입력란 */}
           <div className="my-4 flex h-[30%] flex-col justify-center">
             <label
@@ -68,7 +68,7 @@ const AccountDeleteModal: React.FC<AccountDeleteModalProps> = ({ isOpen, onClose
               id="remember"
               aria-describedby="remember"
               type="checkbox"
-              className="mt-[1.8rem] h-7 w-7 rounded border border-neutral-navy-300 accent-neutral-navy-850 dark:accent-neutral-navy-850 dark:ring-offset-gray-800"
+              className="rounded mt-[1.8rem] h-7 w-7 border border-neutral-navy-300 accent-neutral-navy-850 dark:accent-neutral-navy-850 dark:ring-offset-gray-800"
             />
             <div className="my-7 ml-3 text-sm">
               <label
@@ -86,14 +86,14 @@ const AccountDeleteModal: React.FC<AccountDeleteModalProps> = ({ isOpen, onClose
               <button
                 type="submit"
                 onClick={onClose}
-                className="mx-2 h-[3.1rem] w-full rounded-full bg-none px-5 py-3 text-center text-sm text-neutral-white-50 dark:border dark:border-primary-darkblue-hover"
+                className="rounded-full mx-2 h-[3.1rem] w-full bg-none px-5 py-3 text-center text-sm text-neutral-white-50 dark:border dark:border-primary-darkblue-hover"
               >
                 회원 탈퇴
               </button>
               <button
                 type="reset"
                 onClick={onClose}
-                className="dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 mx-2 h-[3.1rem] w-full rounded-full bg-primary-darkblue-hover px-5 py-3 text-center text-sm text-neutral-white-50 focus:outline-none"
+                className="dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 rounded-full mx-2 h-[3.1rem] w-full bg-primary-darkblue-hover px-5 py-3 text-center text-sm text-neutral-white-50 focus:outline-none"
               >
                 취소
               </button>
