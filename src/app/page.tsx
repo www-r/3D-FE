@@ -1,4 +1,4 @@
-import { getAllAssets } from '@/api/assets'
+import { getAllAssets } from '@/api/service/assets'
 import AssetDetail from '@/components/assetDetail/AssetDetail'
 import AssetsList from '@/components/assets/AssetsList'
 import Drawer from '@/components/common/Drawer'

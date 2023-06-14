@@ -1,3 +1,6 @@
+/**
+ * 카테고리 Interface
+ */
 export interface Category {
   name: string
   subcategories: Subcategory[]

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/store/store'
 import { setSelectedCategory } from '@/store/setSelectedCategory'
-import { Subcategory, Category as typeCategory } from '@/interface/category'
+import { Subcategory, Category as typeCategory } from '@/api/interface/category'
 import Category from './Category'
 import Tags from './Tags'
 import { setSelectedTags } from '@/store/tagSlice'
@@ -29,11 +29,11 @@ export default function SideNavList({ category }: SideNavListProps) {
       <div className="pl-[1.6rem]">
         <Image src="/logo-title.svg" alt="로고" width={156} height={36} />
       </div>
-      <div className="flex justify-end px-8 py-[0.4rem] cursor-pointer">
+      <div className="flex cursor-pointer justify-end px-8 py-[0.4rem]">
         <Image src="/icons/minimizeMenu.svg" alt="메뉴" width={24} height={24} />
       </div>
       <ul className="p-[0.8rem]">
-        <li className="py-[0.4rem] leading-[2.4rem] border-b border-neutral-navy-200">
+        <li className="border-b border-neutral-navy-200 py-[0.4rem] leading-[2.4rem]">
           <Link href="#" className="flex p-[0.8rem] text-neutral-navy-200">
             <Image
               src="/icons/assetList.svg"
@@ -71,7 +71,7 @@ export default function SideNavList({ category }: SideNavListProps) {
             </li>
           </ul>
         </li>
-        <li className="leading-[2.4rem] border-b border-neutral-navy-200">
+        <li className="border-b border-neutral-navy-200 leading-[2.4rem]">
           <div>
             <div className="flex p-[0.8rem] text-neutral-navy-200">
               <Image

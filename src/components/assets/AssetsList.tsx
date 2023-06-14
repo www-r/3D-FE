@@ -1,4 +1,4 @@
-import { Asset } from '@/api/assets'
+import { Asset } from '@/api/service/assets'
 import AssetItem from './AssetItem'
 
 interface Props {

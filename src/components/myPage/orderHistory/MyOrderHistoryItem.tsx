@@ -1,6 +1,6 @@
 'use client'
 
-import { Asset } from '@/api/assets'
+import { Asset } from '@/api/service/assets'
 import { formatPrice } from '@/utils/formatPrice'
 import Link from 'next/link'
 
@@ -15,17 +15,20 @@ export default function MyOrderHistoryItem() {
   }
 
   return (
-    <li className="flex w-full justify-between border-b pb-5 text-[14px] text-neutral-navy-100 hover:cursor-pointer hover:border-b hover:border-sky-500 dark:text-neutral-navy-100">
-      <span className="w-full ">2023-06-02</span>
-      <Link
-        href=""
-        onClick={handleOrderNumberClick}
-        className="w-full  text-[18px] underline underline-offset-4"
-      >
-        20230602-0000001
-      </Link>
-      <span className="w-full ">3개</span>
-      <span className="flex-end w-full text-[18px]">￦ 183,500</span>
-    </li>
+    <>
+      <li className="my-4 flex h-[3.75rem] w-full justify-between border-b border-neutral-navy-300 pb-3 text-[14px] hover:cursor-pointer hover:border-b hover:border-sky-500">
+        <span className="ml-[0.5rem] mr-[9.8rem] pt-3">2023-06-02</span>
+        <Link
+          href=""
+          onClick={handleOrderNumberClick}
+          className="mr-[18rem] text-[18px] underline underline-offset-4"
+        >
+          20230602-0000001
+        </Link>
+        <span className="mr-[0.5rem] pt-3">3개</span>
+        <span className="mr-[0.5rem] text-[18px]">￦ 183,500</span>
+        {/* <span className="mr-[0.5rem] text-[18px]">￦ {formatPrice(asset.price)}</span> */}
+      </li>
+    </>
   )
 }
