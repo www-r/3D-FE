@@ -9,7 +9,7 @@ import MyOrderDetail from './orderHistoryDetail/MyOrderDetail'
 export default function MyOrderHistory() {
   return (
     <>
-      {/* <MyOrderHistoryList /> */}
+      <MyOrderHistoryList />
       <MyOrderDetail />
     </>
   )

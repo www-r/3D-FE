@@ -9,9 +9,7 @@ export default function DetailList() {
   return (
     <div className="mt-8">
       <tr className="flex flex-col">
-        <td>
-          <p className="mb-6 flex text-[1.8rem] font-normal">주문상품</p>
-        </td>
+        <p className="mb-6 flex text-[1.8rem] font-normal">주문상품</p>
         <td className="flex h-[4rem] w-[100%] justify-between bg-bg-3 px-[5rem] text-[1.4rem] font-normal text-neutral-100">
           <p className="flex w-[45%] items-center">결제수단 : BC카드</p>
           <div className="flex w-[38%] items-center justify-between py-4 text-[1.15rem]">
@@ -29,9 +27,9 @@ export default function DetailList() {
           </p>
         </td>
       </tr>
-      <tbody>
+      <tr>
         <DetailListItem />
-      </tbody>
+      </tr>
     </div>
   )
 }
