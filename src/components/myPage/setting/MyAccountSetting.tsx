@@ -19,12 +19,12 @@ export default function MyAccountSetting() {
   return (
     <section>
       <div className="flex flex-col items-center justify-center">
-        <h1 className="mb-[4rem] mt-[3rem] text-[24px] font-semibold">내 계정</h1>
+        <h1 className="mb-[4rem] mt-[3rem] text-[1.3rem] font-semibold">내 계정</h1>
         <form className="mb-[19%] flex">
           {/* 성, 이름 Input */}
           <div className="flex flex-col">
             <div className="mx-1 my-5 flex flex-col">
-              <h4 className="my-1 text-[12px]">이름</h4>
+              <h4 className="my-1 text-[0.8rem]">이름</h4>
               <input
                 type="text"
                 name="firstName"
@@ -34,7 +34,7 @@ export default function MyAccountSetting() {
             </div>
 
             <div className="mx-1 my-5 flex flex-col">
-              <h4 className="my-1 text-[12px] ">성</h4>
+              <h4 className="my-1 text-[0.8rem] ">성</h4>
               <input
                 type="text"
                 name="lastName"
@@ -48,7 +48,7 @@ export default function MyAccountSetting() {
 
           {/* 가입한 이메일 주소, 비밀번호 */}
           <div className="flex flex-col">
-            <h4 className="mb-1 text-[12px] ">가입한 이메일 주소</h4>
+            <h4 className="mb-1 text-[0.8rem] ">가입한 이메일 주소</h4>
             <input
               type="email"
               className="focus:ring-primary-600 focus:border-primary-600 rounded-lg mx-1 h-[2.6rem] w-[24.3rem] border border-neutral-navy-300 bg-neutral-navy-950 p-2.5 text-gray-900 dark:border-gray-600 dark:bg-neutral-navy-950 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
@@ -57,7 +57,7 @@ export default function MyAccountSetting() {
 
             {/* 비밀번호 Input */}
             <div className="mt-6 flex flex-col">
-              <h4 className="my-1 text-[12px] ">비밀번호</h4>
+              <h4 className="my-1 text-[0.8rem] ">비밀번호</h4>
               <input
                 type="password"
                 className="focus:ring-primary-600 focus:border-primary-600 rounded-lg mx-1 mb-2 h-[2.6rem] w-[24.3rem] border border-neutral-navy-300 bg-neutral-navy-950 p-2.5  dark:border-gray-600 dark:bg-neutral-navy-950 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
@@ -90,7 +90,7 @@ export default function MyAccountSetting() {
       >
         <a
           href="#"
-          className="dark:text-primary-500 text-[16px] text-neutral-navy-300 underline underline-offset-4"
+          className="dark:text-primary-500 text-[1rem] text-neutral-navy-300 underline underline-offset-4"
         >
           탈퇴하기
         </a>

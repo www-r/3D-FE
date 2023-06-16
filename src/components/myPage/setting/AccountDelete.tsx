@@ -29,7 +29,7 @@ const AccountDeleteModal: React.FC<AccountDeleteModalProps> = ({ isOpen, onClose
         className="rounded-xl m-[4.3rem] h-[68%] w-[58%] justify-center bg-black px-12"
       >
         <div className="mb-6 mt-8 flex justify-center">
-          <p className="mx-10 my-6 mb-4 text-[14px] text-sm text-neutral-navy-100">
+          <p className="mx-10 my-6 mb-4 text-[0.9rem] text-sm text-neutral-navy-100">
             가입 날짜 : <span className=""> 년. 월. 일 / </span>
             계정 이메일 : <span className=""> email@email.com</span>
           </p>
@@ -39,19 +39,19 @@ const AccountDeleteModal: React.FC<AccountDeleteModalProps> = ({ isOpen, onClose
           <div className="my-4 flex h-[30%] flex-col justify-center">
             <label
               htmlFor="reason"
-              className="mb-[6px] flex justify-center text-[20px] text-neutral-navy-100 dark:text-neutral-navy-100"
+              className="mb-[6px] flex justify-center text-[1.3rem] text-neutral-navy-100 dark:text-neutral-navy-100"
             >
               탈퇴 사유를 입력해주세요.
             </label>
             <textarea
               name="reason"
               placeholder="탈퇴 사유 입력하기(최대 300자)(선택)"
-              className="my-4 h-full w-full bg-neutral-navy-950 pl-3 pt-2 text-[14px] text-gray-900 dark:placeholder-gray-400"
+              className="my-4 h-full w-full bg-neutral-navy-950 pl-3 pt-2 text-[0.9rem] text-gray-900 dark:placeholder-gray-400"
             />
           </div>
 
           {/* 탈퇴 시, 공지내용 */}
-          <div className="my-14 flex justify-center text-[14px] text-neutral-navy-100 dark:text-neutral-navy-100">
+          <div className="my-14 flex justify-center text-[0.9rem] text-neutral-navy-100 dark:text-neutral-navy-100">
             <p className="text-center">
               회원 탈퇴할 시 해당 계정에 보유한 쿠폰과 내 에셋, 위시리스트, 장바구니 등 회원님과
               관련된 모든 정보가 완전히 삭제되며,
@@ -73,7 +73,7 @@ const AccountDeleteModal: React.FC<AccountDeleteModalProps> = ({ isOpen, onClose
             <div className="my-7 ml-3 text-sm">
               <label
                 htmlFor="remember"
-                className="text-[14px] text-neutral-navy-100 dark:text-neutral-navy-100 "
+                className="text-[0.9rem] text-neutral-navy-100 dark:text-neutral-navy-100 "
               >
                 해당 계정에 대한 회원 탈퇴를 계속 진행하시겠습니까?
               </label>
