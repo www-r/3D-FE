@@ -1,4 +1,4 @@
-import { Asset } from '@/api/assets'
+import { Asset } from '@/api/service/assets'
 import WishlistButton from '../common/WishlistButton'
 import { formatPrice } from '@/utils/formatPrice'
 
