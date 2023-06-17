@@ -10,7 +10,6 @@ interface Props {
 
 export default function Drawer({ children }: Props) {
   const isOpen = useSelector((state: RootState) => state.drawer.isOpen)
-  console.log(isOpen)
 
   return isOpen ? (
     <div className="min-w-[71rem] h-full bg-bg-0 border-transparent-navy-30 border-l overflow-y-scroll no-scrollbar">
