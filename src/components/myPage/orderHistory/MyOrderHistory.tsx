@@ -14,7 +14,7 @@ export default function MyOrderHistory() {
           주문내역 <span className="text-[1.8rem] font-normal"> (100) </span>
         </h2>
 
-        <MyOrderCalendar />
+        {/* <MyOrderCalendar /> */}
 
         <div className="h-[70%] w-full justify-center">
           <div className="mx-1 mb-3 mt-6 flex h-[2.5rem] w-full justify-between text-[1.4rem]">
