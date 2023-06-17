@@ -3,6 +3,7 @@
  */
 
 import { Asset } from '@/api/service/assets'
+import { useState } from 'react'
 import MyOrderHistoryItem from './MyOrderHistoryItem'
 import MyOrderCalendar from './calendar/MyOrderCalendar'
 
@@ -13,7 +14,6 @@ interface Props {
 // export default function MyOrderHistoryList({ assets }: Props) {
 export default function MyOrderHistoryList() {
   return (
-    <>
       <section className="flex w-[97%] flex-col">
         {/* 주문내역 타이틀, 내역 갯수 */}
         <div className=" mt-[9rem] h-full w-full">
@@ -36,11 +36,8 @@ export default function MyOrderHistoryList() {
             {/* {assets.map((asset) => (
         <MyOrderHistoryItem key={asset.id} asset={asset} />
       ))} */}
-          </ul>
-          {/* <MyOrderHistoryList /> */}
-          {/* <MyOrderHistoryList assets={[]} /> */}
-        </div>
-      </section>
-    </>
+      </ul>
+      </div>
+    </section>
   )
 }

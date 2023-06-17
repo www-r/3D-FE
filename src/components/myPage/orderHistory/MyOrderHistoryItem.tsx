@@ -3,7 +3,6 @@
 import { Asset } from '@/api/service/assets'
 import { formatPrice } from '@/utils/formatPrice'
 import Link from 'next/link'
-import DetailList from './orderHistoryDetail/DetailList'
 
 interface Props {
   asset: Asset
@@ -33,7 +32,6 @@ export default function MyOrderHistoryItem() {
         <span className="mr-[0.5rem] text-[1.2rem]">{formatPrice(183500)}</span>
         {/* <span className="mr-[0.5rem] text-[18px]">￦ {formatPrice(asset.price)}</span> */}
       </li>
-      <DetailList />
     </>
   )
 }
