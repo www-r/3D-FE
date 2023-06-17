@@ -20,7 +20,7 @@ export default function Login() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     loginUser(account)
-    router.push('/my-page')
+    router.push('/')
   }
 
   return (
