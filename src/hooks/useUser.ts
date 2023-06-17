@@ -6,7 +6,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 export const useUser = () => {
   const queryClient = useQueryClient()
 
-  const userId: UserId | undefined = queryClient.getQueryData(['user'])
+  const userId: UserId | undefined = queryClient.getQueryData(['user', 'id'])
 
   const { data: user } = useQuery({
     queryKey: ['user'],
