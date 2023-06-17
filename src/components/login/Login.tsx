@@ -1,60 +1,84 @@
 'use client'
-import React from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react'
 import Image from 'next/image'
+import { useLogin } from '@/hooks/useLogin'
+import { useRouter } from 'next/navigation'
 
 export default function Login() {
+  const [account, setAccount] = useState({ email: '', password: '' })
+  const { mutate: loginUser } = useLogin()
+  const router = useRouter()
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target
+    setAccount({
+      ...account,
+      [id]: value,
+    })
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    loginUser(account)
+    router.push('/')
+  }
+
   return (
     <>
-      <section className="bg-cover bg-center h-screen bg-[url('/background/login-bg.svg')]">
-        <div className="flex flex-col items-end justify-center mx-auto md:h-screen lg:py-0">
-          <div className="w-[36.8rem] h-[47.5rem] justify-center m-8 rounded-lg bg-opacity-80 bg-black">
-            <div className="w-[36.8rem] h-[47.5rem] space-y-4 md:space-y-6 sm:p-8">
-              <a href="#" className="flex items-center mb-[11.8rem]">
+      <section className="h-screen bg-[url('/background/login-bg.svg')] bg-cover bg-center">
+        <div className="mx-auto flex flex-col items-end justify-center md:h-screen lg:py-0">
+          <div className="rounded-lg m-8 h-[47.5rem] w-[36.8rem] justify-center bg-black bg-opacity-80">
+            <div className="h-[47.5rem] w-[36.8rem] space-y-4 sm:p-8 md:space-y-6">
+              <a href="#" className="mb-[11.8rem] flex items-center">
                 <Image src="/logo-title.svg" alt="logo" width={155} height={54} />
               </a>
-              <h1 className="text-3xl font-bold text-neutral-navy-100 md:text-3xl dark:text-text-neutral-navy-100">
+              <h1 className="text-3xl md:text-3xl dark:text-text-neutral-navy-100 font-bold text-neutral-navy-100">
                 로그인
               </h1>
-              <h4 className="text-xs font-bold text-neutral-navy-100 md:text-xs dark:text-neutral-navy-100">
+              <h4 className="text-xs font-bold text-neutral-navy-100 dark:text-neutral-navy-100 md:text-xs">
                 가입하신 이메일 또는 간편 로그인
               </h4>
               <div className="border-t-2 border-blue-500"></div>
 
-              <form className="space-y-4 md:space-y-6  my-4" action="#">
+              <form onSubmit={handleSubmit} className="my-4 space-y-4  md:space-y-6" action="#">
                 <div>
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                   ></label>
                   <input
-                    type="email"
+                    type="text"
                     name="email"
                     id="email"
-                    className="h-[3.1rem] bg-neutral-navy-950 border border-neutral-navy-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-neutral-navy-950 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="rounded-lg focus:ring-primary-600 focus:border-primary-600 block h-[3.1rem] w-full border border-neutral-navy-300 bg-neutral-navy-950 p-2.5 text-gray-900 dark:border-gray-600 dark:bg-neutral-navy-950 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
                     placeholder="E-mail"
+                    onChange={handleChange}
+                    value={account.email}
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                   ></label>
                   <input
                     type="password"
                     name="password"
                     id="password"
                     placeholder="Password"
-                    className="h-[3.1rem] bg-neutral-navy-950 border border-neutral-navy-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-main focus:border-primary-main block w-full p-2.5 dark:bg-neutral-navy-950 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="rounded-lg block h-[3.1rem] w-full border border-neutral-navy-300 bg-neutral-navy-950 p-2.5 text-gray-900 focus:border-primary-main focus:ring-primary-main dark:border-gray-600 dark:bg-neutral-navy-950 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:text-sm"
+                    onChange={handleChange}
+                    value={account.password}
                   />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-start">
-                    <div className="flex items-center h-5">
+                    <div className="flex h-5 items-center">
                       <input
                         id="remember"
                         aria-describedby="remember"
                         type="checkbox"
-                        className="w-5 h-5 border border-neutral-navy-300 rounded accent-neutral-navy-850 dark:accent-neutral-navy-850 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                        className="rounded dark:focus:ring-primary-600 h-5 w-5 border border-neutral-navy-300 accent-neutral-navy-850 dark:accent-neutral-navy-850 dark:ring-offset-gray-800"
                       />
                     </div>
                     <div className="ml-3 text-sm">
@@ -66,27 +90,27 @@ export default function Login() {
                       </label>
                     </div>
                   </div>
-                  <button className="flex items-center justify-between border border-white-0 bg-white w-[11.5rem] h-[3.5rem] px-4 py-2 rounded-lg">
+                  <button className="border-white-0 rounded-lg flex h-[3.5rem] w-[11.5rem] items-center justify-between border bg-white px-4 py-2">
                     <Image src="/google.svg" alt="Google Logo" width={20} height={20} />
                     <span className="text-xs font-semibold">구글로 가입하기</span>
                   </button>
                 </div>
                 <button
                   type="submit"
-                  className="w-full h-[3.1rem] rounded-full text-neutral-white-50 bg-primary-darkblue-hover focus:outline-none text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  className="rounded-full dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 h-[3.1rem] w-full bg-primary-darkblue-hover px-5 py-2.5 text-center text-sm text-neutral-white-50 focus:outline-none"
                 >
                   Log in
                 </button>
                 <div className="flex items-center justify-between">
                   <a
                     href=""
-                    className="text-xs text-neutral-navy-100 text-primary-600 hover:underline dark:text-primary-500"
+                    className="text-primary-600 dark:text-primary-500 text-xs text-neutral-navy-100 hover:underline"
                   >
                     회원가입
                   </a>
                   <a
                     href=""
-                    className="text-xs text-neutral-navy-100 ext-primary-600 hover:underline dark:text-primary-500"
+                    className="ext-primary-600 dark:text-primary-500 text-xs text-neutral-navy-100 hover:underline"
                   >
                     아이디/비밀번호 찾기
                   </a>

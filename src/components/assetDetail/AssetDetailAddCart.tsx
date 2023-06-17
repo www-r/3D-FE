@@ -6,7 +6,7 @@ interface Props {
   asset: Asset
 }
 
-export default function AssetDetailWishlist({ asset }: Props) {
+export default function AssetDetailAddCart({ asset }: Props) {
   return (
     <div className="absolute bottom-0 h-[10.5rem] w-[70.9rem] border-t border-transparent-navy-30 bg-bg-2">
       <div className="p-[2.7rem]">
