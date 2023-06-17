@@ -9,6 +9,5 @@ export const login = async (account: LoginRequest) => {
 export const getUser = async (user: number) => {
   if (!user) return null
   const res = await axiosInstance.get(`/s/user/${user}`)
-  console.log({ res })
   return res
 }
