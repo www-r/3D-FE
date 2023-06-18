@@ -1,4 +1,6 @@
 module.exports = {
+  tailwindConfig: './styles/tailwind.config.js',
+
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,24 +14,35 @@ module.exports = {
       sm: [
         '1.2rem',
         {
-          fontWeight: '400',
-          lineHeight: '1.25rem',
+          fontWeight: '400'
         },
+      ],
+      ms: '1.4rem',
+      mm: [
+        '1.4rem',
+        { fontWeight: '500' }
       ],
       base: [
         '1.6rem',
         {
-          fontWeight: '500',
-          lineHeight: '1.5rem',
+          fontWeight: '500'
         },
+      ],
+      sl: [
+        '1.8rem',
+        { fontWeight: '500' }
       ],
       lg: '2.4rem',
       xl: '3.2rem',
+    },
+    borderRadius: {
+      'sm': '0.4rem'
     },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'checkbox-off': 'url(/icons/checkboxOFF.svg)',
       },
       colors: {
         primary: {
@@ -78,4 +91,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

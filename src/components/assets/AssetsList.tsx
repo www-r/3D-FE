@@ -1,4 +1,4 @@
-import { Asset } from '@/api/assets'
+import { Asset } from '@/api/service/assets'
 import AssetItem from './AssetItem'
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 
 export default function AssetsList({ assets }: Props) {
   return (
-    <ul className="flex gap-2 flex-wrap ">
+    <ul className="flex flex-wrap gap-2 ">
       {assets.map((asset) => (
         <AssetItem key={asset.id} asset={asset} />
       ))}
