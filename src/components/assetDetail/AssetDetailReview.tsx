@@ -1,8 +1,8 @@
-import { Asset } from '@/api/service/assets'
 import Image from 'next/image'
 import React from 'react'
 import Star from '../common/Star'
 import CreateReview from './CreateReview'
+import { Asset } from '@/api/interface/asset'
 
 interface Props {
   asset: Asset

@@ -8,7 +8,7 @@ export interface Asset {
   rating: number
   reviewCount: number
   wishCount: number
-  wishListId: number | null
+  wishlistId: number | null
   cartId: number | null
 }
 
