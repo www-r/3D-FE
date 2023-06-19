@@ -65,3 +65,7 @@ input {
 input[type='checkbox']:checked + label .bg-checkbox-off {
   background-image: url(/icons/checkboxOn.svg);
 }
+
+input[type='radio']:checked + label .bg-radio-off {
+  background-image: url(/icons/radioOn.svg);
+}

@@ -43,6 +43,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'checkbox-off': 'url(/icons/checkboxOFF.svg)',
+        'radio-off': 'url(/icons/radioOff.svg)'
       },
       colors: {
         primary: {
@@ -65,6 +66,7 @@ module.exports = {
           2: '#23262D',
           3: '#363B43',
           4: '#151719',
+          'transparent': 'transparent',
         },
         neutral: {
           'white-0': '#FFF',
@@ -79,6 +81,7 @@ module.exports = {
           'navy-1000': '#101010',
         },
         transparent: {
+          0: 'transparent',
           gray: '#EBECF0',
           navy: '#FAFBFC',
           'navy-15': 'rgba(250, 251, 252, 0.15)',
