@@ -1,6 +1,6 @@
 'use client'
 
-import { Asset } from '@/api/service/assets'
+import { Asset } from '@/api/interface/asset'
 import { formatPrice } from '@/utils/formatPrice'
 import Link from 'next/link'
 

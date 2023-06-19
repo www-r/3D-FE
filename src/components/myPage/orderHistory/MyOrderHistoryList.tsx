@@ -2,9 +2,9 @@
  * 마이페이지-주문내역
  */
 
-import { Asset } from '@/api/service/assets'
 import { useState } from 'react'
 import MyOrderHistoryItem from './MyOrderHistoryItem'
+import { Asset } from '@/api/interface/asset'
 
 interface Props {
   assets: Asset[]
