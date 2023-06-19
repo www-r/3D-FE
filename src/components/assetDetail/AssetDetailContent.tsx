@@ -1,7 +1,6 @@
 'use client'
 
-import { Asset } from '@/api/service/assets'
-import AssetTag from '../assets/AssetTags'
+import { Asset } from '@/api/interface/asset'
 import WishlistButton from '../common/WishlistButton'
 
 interface Props {
@@ -17,7 +16,7 @@ export default function AssetDetailContent({ asset }: Props) {
       <article className="h-full px-6 pb-10 pt-6 text-neutral-navy-100">
         <div className="mb-6 flex h-[5.6rem] items-center">
           <div className="w-[44.1rem] text-lg font-semibold">
-            <h2>{asset.title}</h2>
+            <h2>{asset.assetName}</h2>
           </div>
           <div>
             <button>URL Copy</button>
@@ -53,7 +52,7 @@ export default function AssetDetailContent({ asset }: Props) {
             검색하여 비슷한 365종의 에셋을 더 탑색해보세요.
           </div>
         </div>
-        <AssetTag tags={asset.categories.tags} />
+        {/* <AssetTag tags={asset.categories.tags} /> */}
         <div className="h-[10.5rem]"></div>
       </article>
     </>
