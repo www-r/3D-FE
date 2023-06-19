@@ -1,12 +1,13 @@
 import React from 'react'
 import { formatPrice } from '@/utils/formatPrice'
 import PaymentItem from './PaymentItem'
+import Title from '../common/Title'
 
 export default function PaymentInfo() {
   return (
     <div className="sticky flex w-[23.9%] min-w-[26rem] flex-col justify-between border-l border-transparent-navy-30 px-[1.432%] pb-[3.222%] pt-[2.864%]">
       <div>
-        <h2 className="mb-[3.2rem] text-lg font-bold leading-[3rem]">상세정보</h2>
+        <Title tit="상세정보" />
         <ul className="max-h-[59vh] overflow-y-auto">
           <PaymentItem />
         </ul>

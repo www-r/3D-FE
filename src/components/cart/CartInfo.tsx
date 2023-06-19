@@ -1,12 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import { formatPrice } from '@/utils/formatPrice'
+import Title from '../common/Title'
 
 export default function CartInfo() {
   return (
     <div className="sticky mr-[2.4rem] flex w-[23.9%] min-w-[26rem] flex-col justify-between border-l border-transparent-navy-30 px-[1.432%] py-[1.671%]">
       <div>
-        <h2 className="mb-[2.4rem] text-lg font-bold">결제 정보</h2>
+        <Title tit="결제정보" mb={2.4} />
         <ul className="text-ms">
           <li className="flex w-full justify-between border-b border-dashed border-transparent-navy-30 px-[0.4rem] leading-[5.6rem]">
             <p>구매할 에셋 : 4개</p>

@@ -1,15 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import Layout from '@/components/common/Layout'
+import Title from '@/components/common/Title'
 import CompleteTable from '@/components/payment/complete/CompleteTable'
 
 export default function Complete() {
   return (
     <Layout>
       <div className="py-[3.2rem] text-neutral-navy-100">
-        <h2 className="mb-[3.2rem] py-[3.2rem] text-center text-lg font-bold">
-          구매가 완료되었습니다!
-        </h2>
+        <Title className="py-[3.2rem] text-center" tit="구매가 완료되었습니다!" />
         <CompleteTable />
         <div className="mx-auto w-[30.5rem] text-center text-sm font-semibold">
           <div className="mb-[1.6rem] rounded-sm border border-primary-darkblue leading-[3.6rem]">
