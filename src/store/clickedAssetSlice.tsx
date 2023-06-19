@@ -1,17 +1,16 @@
-import { Asset } from '@/api/assets'
+import { Asset } from '@/api/interface/asset'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: Asset = {
-  id: 0,
-  title: '',
+  assetId: 0,
+  assetName: '',
   price: 0,
-  discount: 0,
-  createdAt: '',
-  updatedAt: '',
-  categories: {
-    title: '',
-    tags: [],
-  },
+  releaseDate: '',
+  rating: 0,
+  reviewCount: 0,
+  wishCount: 0,
+  wishlistId: 0,
+  cartId: 0,
 }
 
 const clickedAssetSlice = createSlice({

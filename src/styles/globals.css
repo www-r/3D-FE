@@ -26,6 +26,32 @@ body {
   min-height: 100vh;
   overflow-y: auto;
   font-size: 1.6rem;
+
+  /* .react-datepicker-popper {
+    font-size: medium;
+    min-width: 17%;
+    color: #5b5b5b;
+    .react-datepicker__header {
+      min-width: 17%;
+      margin-top: 8px;
+      background-color: #171a1d;
+      color: #737c85;
+      border-bottom: none;
+      .react-datepicker__day-names {
+        .react-datepicker__day-name {
+          color: #737c85;
+          width: 32px;
+        }
+      }
+    }
+    .react-datepicker__triangle {
+      display: none;
+    }
+    .react-datepicker__day--outside-month {
+      cursor: default;
+      visibility: hidden;
+    }
+  } */
 }
 
 * {
@@ -34,4 +60,8 @@ body {
 
 input {
   outline: none;
+}
+
+input[type='checkbox']:checked + label .bg-checkbox-off {
+  background-image: url(/icons/checkboxOn.svg);
 }

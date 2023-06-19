@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import AssetDetailContent from './AssetDetailContent'
 import AssetDetailNav from './AssetDetailNav'
-import AssetDetailWishlist from './AssetDetailWishlist'
+import AssetDetailAddCart from './AssetDetailAddCart'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store/store'
+import AssetDetailReview from './AssetDetailReview'
 
 export default function AssetDetail() {
   const asset = useSelector((state: RootState) => state.clickedAsset)
@@ -15,15 +16,8 @@ export default function AssetDetail() {
   return (
     <div>
       <AssetDetailNav selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-      {selectedTab ? (
-        <>
-          <div className="h-[52.3rem] bg-bg-2 border-transparent-navy-30 border-b">three.js</div>
-          <AssetDetailContent asset={asset} />
-        </>
-      ) : (
-        <div>review</div>
-      )}
-      <AssetDetailWishlist asset={asset} />
+      {selectedTab ? <AssetDetailContent asset={asset} /> : <AssetDetailReview asset={asset} />}
+      <AssetDetailAddCart asset={asset} />
     </div>
   )
 }
