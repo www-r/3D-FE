@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 
 interface Props {
   activePage: number
@@ -9,9 +10,6 @@ interface Props {
 }
 
 export default function PaginationButton({ activePage, pages, setActivePage }: Props) {
-  const handlePageClick = (page: number) => {
-    setActivePage(page)
-  }
 
   const getPages = () => {
     const elements = []
@@ -39,23 +37,27 @@ export default function PaginationButton({ activePage, pages, setActivePage }: P
 
   const handleNavigate = (action: 'prev' | 'next') => {
     if (action === 'prev') {
-      activePage !== 1 && setActivePage(activePage - 1)
+      if (typeof pages === 'number' && activePage !== 0) {
+        setActivePage(activePage - 1)
+      }
     }
     if (action === 'next') {
-      activePage !== pages && setActivePage(activePage + 1)
+      if (typeof pages === 'number' && activePage !== pages - 1) {
+        setActivePage(activePage + 1)
+      }
     }
   }
 
   return (
-    <nav className=" flex justify-center">
+    <nav className="mb-[6.4rem] flex justify-center">
       <ul className="inline-flex items-center gap-3 -space-x-px">
         <li>
           <button
             onClick={() => handleNavigate('prev')}
             className="rounded ml-0 rounded-[0.4rem] px-3 py-2 leading-tight
-             text-gray-500 hover:bg-neutral-navy-100 hover:text-neutral-navy-950"
+             text-gray-500"
           >
-            prev
+            <Image src="/icons/chevronLeft.svg" alt="left" width={24} height={24} />
           </button>
         </li>
         {getPages()}
@@ -63,9 +65,9 @@ export default function PaginationButton({ activePage, pages, setActivePage }: P
           <button
             onClick={() => handleNavigate('next')}
             className="rounded ml-0 rounded-[0.4rem] px-3 py-2 leading-tight
-             text-gray-500 hover:bg-gray-100 hover:text-gray-700 "
+             text-gray-500 "
           >
-            next
+            <Image src="/icons/chevronRight.svg" alt="right" width={24} height={24} />
           </button>
         </li>
       </ul>
