@@ -4,7 +4,7 @@
 import { readFile } from 'fs/promises'
 import path from 'path'
 import { axiosInstance } from '../axios'
-import { AssetList } from '../interface/asset'
+import { AssetReponse } from '../interface/asset'
 
 // export interface Asset {
 //   id: number
@@ -26,7 +26,7 @@ import { AssetList } from '../interface/asset'
 //   return readFile(filePath, 'utf-8').then<Asset[]>(JSON.parse)
 // }
 
-export const getAssets = async <T = AssetList>(page: number): Promise<T> => {
+export const getAssets = async <T = AssetReponse>(page: number): Promise<T> => {
   const res = await axiosInstance.get<T>(`/assets?page=${page}`)
   return res.data
 }

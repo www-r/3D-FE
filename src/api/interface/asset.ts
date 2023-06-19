@@ -12,6 +12,12 @@ export interface Asset {
   cartId: number | null
 }
 
-export interface AssetList {
-  AssetList: Asset[]
+interface AssetData {
+  assetList: Asset[]
+  size: number
+  currentPage: number
+  totalPage: number
+  totalElement: number
 }
+
+export type AssetReponse = ApiResponse<AssetData>
