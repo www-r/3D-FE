@@ -12,7 +12,7 @@ export default function AssetDetailAddCart({ asset }: Props) {
       <div className="p-[2.7rem]">
         <div className="flex w-[65.7rem] justify-between">
           <div className="flex w-[33rem] flex-col gap-y-[1rem]">
-            <h3 className="text-base leading-[1.936rem] text-neutral-navy-100">{asset.title}</h3>
+            <h3 className="text-base leading-[1.936rem] text-neutral-navy-100">{asset.assetName}</h3>
             <div className="text-[1.8rem] text-neutral-white-0">{formatPrice(asset.price)}</div>
           </div>
           <div className="flex">
