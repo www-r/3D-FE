@@ -1,8 +1,6 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '@/components/common/Layout'
-import { formatPrice } from '@/utils/formatPrice'
 import CompleteTable from '@/components/payment/complete/CompleteTable'
 
 export default function Complete() {
