@@ -1,7 +1,12 @@
-import { getAllAssets } from '@/api/service/assets'
+import { getAssets } from '@/api/service/asset'
 import { useQuery } from '@tanstack/react-query'
 
-export const useGetAssets = () => {
-  const { data: assets } = useQuery({ queryKey: ['assets'], queryFn: getAllAssets })
+export const useGetAssets = (page: number) => {
+  const { data: assets } = useQuery({
+    queryKey: ['assets', page],
+    queryFn: () => getAssets(page),
+    keepPreviousData: true,
+  })
+
   return { assets }
 }

@@ -12,7 +12,7 @@ export const useLogin = () => {
       // queryClient.setQueryData(['user', 'id'], data.data.data)
       // setQueryData inactive 되어 다른페이지에서 getQueryData 할 수 없음
       // redux 사용해서 userId 전역관리?
-      setToken(data.headers.authorization)
+      setToken(data!.headers!.authorization)
     },
     onError: (err: AxiosError) => {
       console.log(err)
