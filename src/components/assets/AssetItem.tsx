@@ -1,6 +1,6 @@
 'use client'
 
-import { Asset } from '@/api/service/assets'
+import { Asset } from '@/api/interface/asset'
 import { setClickedAsset } from '@/store/clickedAssetSlice'
 import { openDrawer } from '@/store/drawerSlice'
 import { formatPrice } from '@/utils/formatPrice'
@@ -26,12 +26,13 @@ export default function AssetItem({ asset }: Props) {
         <div className="rounded h-[26.8rem] bg-gray-100"></div>
         <div>
           <div className="flex h-[3rem] items-center text-sm text-neutral-navy-200">
-            <span>4.9(38k)</span>
+            <span>{asset.rating}</span>
+            <span>({asset.reviewCount})</span>
             <pre className="text-transparents-navy-15"> | </pre>
-            <span>612k</span>
+            <span>{asset.wishCount}</span>
           </div>
           <h3 className="flex h-[2.8rem] items-center text-base  leading-[2.178rem] text-neutral-navy-100">
-            {asset.title}
+            {asset.assetName}
           </h3>
           <div className="flex h-[2.4rem] items-center justify-between">
             <p className="text-[1.8rem] leading-[2.4rem] text-neutral-white-0">
