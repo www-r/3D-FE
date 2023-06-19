@@ -11,7 +11,7 @@ export default function AssetsList({ assets }: Props) {
   if (!assets) return null
 
   return (
-    <ul className="flex flex-wrap gap-2 ">
+    <ul className="mb-[6.4rem] flex flex-wrap gap-2">
       {assets.map((asset) => (
         <AssetItem key={asset.assetId} asset={asset} />
       ))}

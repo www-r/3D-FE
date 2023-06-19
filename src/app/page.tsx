@@ -14,8 +14,8 @@ export default function HomePage() {
   return (
     <Layout>
       <div className="flex">
-        <div className="h-[100%]">
-          <section className="min-h-[calc(100vh-12.3rem)] w-full px-[2.3rem] pt-8">
+        <div className="h-[100%] w-full">
+          <section className="min-h-[calc(100vh-12.3rem)] px-[2.3rem] pt-8">
             <IndividualAsset />
           </section>
           <Footer />
