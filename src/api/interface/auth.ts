@@ -27,6 +27,7 @@ export interface RegisterRequest extends LoginRequest {
   lastName: string
   email: string
   password: string
+  passwordConfirm?: string
 }
 
 export interface UserPayload {
@@ -54,6 +55,16 @@ export interface RegisterEnroll {
   password: string
 }
 
+export interface JoinResponseData {
+  status: number
+  msg: string
+  data: boolean
+}
+export interface EmailCheckResponseData {
+  status: number
+  msg: string
+  data: boolean
+}
 export interface EmailCheckRequest {
   email: string
 }
@@ -76,6 +87,7 @@ export interface EditProfileRequest {
   }
 }
 
+// 회원 탈퇴
 export interface WithdrawalResponseData {
   status: number
   msg: string
