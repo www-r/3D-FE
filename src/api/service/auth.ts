@@ -2,11 +2,15 @@
  * 로그인, 회원가입 등 인증관련 API
  */
 
+import { setToken } from '@/utils/token'
 import { axiosInstance } from '../axios'
 import { LoginRequest, LoginResponse } from '../interface/auth'
 
 export const login = async <T = LoginResponse>(account: LoginRequest): Promise<T> => {
   const res = await axiosInstance.post<T>(`/login`, account)
+  if ((res.status = 200)) {
+    setToken(res.headers.authorization)
+  }
   return res.data
 }
 
