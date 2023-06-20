@@ -5,11 +5,9 @@ import IndividualAsset from '@/components/assets/IndividualAsset'
 import Drawer from '@/components/common/Drawer'
 import Footer from '@/components/common/Footer'
 import Layout from '@/components/common/Layout'
-import PaginationButton from '@/components/common/PaginationButton'
-import { useGetAssets } from '@/hooks/useGetAssets'
+
 
 export default function HomePage() {
-  // const { data } = await getAssets(0)
 
   return (
     <Layout>

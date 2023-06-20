@@ -12,14 +12,17 @@ export default function AssetDetailAddCart({ asset }: Props) {
       <div className="p-[2.7rem]">
         <div className="flex w-[65.7rem] justify-between">
           <div className="flex w-[33rem] flex-col gap-y-[1rem]">
-            <h3 className="text-base leading-[1.936rem] text-neutral-navy-100">{asset.assetName}</h3>
+            <h3 className="text-base leading-[1.936rem] text-neutral-navy-100">
+              {asset.assetName}
+            </h3>
             <div className="text-[1.8rem] text-neutral-white-0">{formatPrice(asset.price)}</div>
           </div>
           <div className="flex">
             <button
-              className="rounded mr-3 flex h-[4rem] w-[26.311rem] items-center
-          justify-center bg-primary-main px-20 py-3
-          font-semibold leading-[1.936rem] text-neutral-white-0"
+              className="mr-3 flex h-[4rem] w-[26.311rem] items-center justify-center
+          rounded-[0.4rem] bg-primary-main px-20 py-3
+          font-semibold leading-[1.936rem] text-neutral-white-0
+          hover:bg-primary-darkblue-hover"
             >
               장바구니에 담기
             </button>
