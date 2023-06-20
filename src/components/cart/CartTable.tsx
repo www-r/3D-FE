@@ -1,6 +1,6 @@
 import React from 'react'
 import CartItem from './CartItem'
-import CustomInput from '../common/CustomInput'
+import CustomCheckbox from '../common/CustomCheckbox'
 
 export default function CartTable() {
   return (
@@ -8,7 +8,7 @@ export default function CartTable() {
       <thead>
         <tr className="w-[100%] text-neutral-200">
           <th className="w-[7.5%] text-center text-sm">
-            <CustomInput id="all" />
+            <CustomCheckbox id="all" />
           </th>
           <th className="w-[6.6%] text-sm">
             <p>대표이미지</p>
