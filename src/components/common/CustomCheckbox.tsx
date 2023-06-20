@@ -1,7 +1,6 @@
 import React from 'react'
 
-type CustomInputProps = {
-  type?: 'checkbox' | 'radio'
+type CustomCheckboxProps = {
   id: string
   className?: string
   width?: number
@@ -9,23 +8,22 @@ type CustomInputProps = {
   children?: React.ReactNode
 }
 
-function CustomInput({
-  type = 'checkbox',
+function CustomCheckbox({
   id,
   className,
   width = 3.2,
   height = 3.2,
   children,
-}: CustomInputProps) {
+}: CustomCheckboxProps) {
   return (
     <>
-      <input type={type} id={id} className="hidden" />
+      <input type="checkbox" id={id} className="hidden" />
       <label htmlFor={id} className={`flex items-center ${className}`}>
-        <div className={`mx-auto h-[${height}rem] w-[${width}rem] bg-${type}-off bg-cover`}></div>
+        <div className={`mx-auto h-[${height}rem] w-[${width}rem] bg-checkbox-off bg-cover`}></div>
         {children}
       </label>
     </>
   )
 }
 
-export default CustomInput
+export default CustomCheckbox

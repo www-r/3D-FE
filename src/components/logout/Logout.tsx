@@ -1,14 +1,21 @@
 'use client'
+import { Dispatch, SetStateAction } from 'react'
 import { logout } from '@/api/service/auth'
-import { setToken } from '@/utils/token'
+import { removeCookie, setToken } from '@/utils/token'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import Swal from 'sweetalert2'
 
-export default function Logout() {
+export default function Logout({
+  setAccessToken,
+}: {
+  setAccessToken: Dispatch<SetStateAction<boolean>>
+}) {
   const { mutate } = useMutation(logout, {
     onSuccess: () => {
       console.log(logout, '로그아웃 성공')
+      removeCookie('accessToken')
+      setAccessToken(false)
     },
   })
   const queryClient = useQueryClient()
