@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import { formatPrice } from '@/utils/formatPrice'
-import CustomInput from '../common/CustomInput'
+import CustomCheckbox from '../common/CustomCheckbox'
 
 export default function CartItem() {
   return (
     <tr>
       <td>
-        <CustomInput id="i1" />
+        <CustomCheckbox id="i1" />
       </td>
       <td className="py-[0.8rem]">
         <Image src="/image.svg" alt="asset" width={80} height={100} className="min-w-[8rem]" />
