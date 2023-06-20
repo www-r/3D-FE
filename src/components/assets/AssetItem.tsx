@@ -5,6 +5,7 @@ import { setClickedAsset } from '@/store/clickedAssetSlice'
 import { openDrawer } from '@/store/drawerSlice'
 import { formatPrice } from '@/utils/formatPrice'
 import { useDispatch } from 'react-redux'
+import Image from 'next/image'
 
 interface Props {
   asset: Asset
@@ -18,30 +19,51 @@ export default function AssetItem({ asset }: Props) {
     dispatch(openDrawer())
   }
   return (
-    <li
-      onClick={handleClick}
-      className="h-[35.8rem] min-w-[22.6rem] hover:cursor-pointer  focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-    >
-      <div className="m-auto h-[35rem] w-[21.8rem]">
-        <div className="rounded h-[26.8rem] bg-gray-100"></div>
-        <div>
-          <div className="flex h-[3rem] items-center text-sm text-neutral-navy-200">
-            <span>{asset.rating}</span>
-            <span>({asset.reviewCount})</span>
-            <pre className="text-transparents-navy-15"> | </pre>
-            <span>{asset.wishCount}</span>
-          </div>
-          <h3 className="flex h-[2.8rem] items-center text-base  leading-[2.178rem] text-neutral-navy-100">
-            {asset.assetName}
-          </h3>
-          <div className="flex h-[2.4rem] items-center justify-between">
-            <p className="text-[1.8rem] leading-[2.4rem] text-neutral-white-0">
-              {formatPrice(asset.price)}
-            </p>
-            <p className="text-primary-newlloyd-button">70%</p>
+    <li>
+      <button
+        onClick={handleClick}
+        className="h-[35.8rem] min-w-[22.4rem] hover:rounded-[0.4rem] hover:border-2 hover:border-primary-main
+      focus:rounded-[0.4rem] focus:border-2 focus:border-primary-main"
+      >
+        <div className="h-[35rem] p-[0.4rem]">
+          <div className="rounded h-[26.6rem] rounded-[0.4rem] bg-gray-100"></div>
+          <div>
+            <div className="flex h-[3rem] items-center text-sm text-neutral-navy-200">
+              <div className="flex">
+                <Image
+                  src="/icons/emptyStar.svg"
+                  alt="left"
+                  width={10}
+                  height={9.5}
+                  className="mr-[0.3rem]"
+                />
+                <p>{asset.rating}</p>
+                <p>({asset.reviewCount})</p>
+              </div>
+              <pre className="text-transparents-navy-15"> | </pre>
+              <div className="flex">
+                <Image
+                  src="/icons/heartFill.svg"
+                  alt="left"
+                  width={10}
+                  height={9.5}
+                  className="mr-[0.3rem]"
+                />
+                <p>{asset.wishCount}</p>
+              </div>
+            </div>
+            <h3 className="flex h-[2.8rem] items-center text-base  leading-[2.178rem] text-neutral-navy-100">
+              {asset.assetName}
+            </h3>
+            <div className="flex h-[2.4rem] items-center justify-between">
+              <p className="text-[1.8rem] leading-[2.4rem] text-neutral-white-0">
+                {formatPrice(asset.price)}
+              </p>
+              {/* <p className="text-primary-newlloyd-button">70%</p> */}
+            </div>
           </div>
         </div>
-      </div>
+      </button>
     </li>
   )
 }
