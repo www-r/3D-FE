@@ -3,17 +3,10 @@
  */
 import { FieldValues } from 'react-hook-form'
 import { ApiResponse } from '.'
-
-// export interface User {
-//   id: string
-//   password: string
-// }
-
-// export type UserRequest = User
-
 export interface LoginRequest {
   email: string
   password: string
+  loginChecked?: boolean
 }
 
 export interface UserId {
@@ -59,6 +52,12 @@ export interface JoinResponseData {
   status: number
   msg: string
   data: boolean
+}
+
+export interface PasswordChangeRequest {
+  email: string
+  verifiedCode: string
+  password: string
 }
 export interface EmailCheckResponseData {
   status: number

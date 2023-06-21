@@ -1,4 +1,4 @@
-import { EmailCheckResponseData, RegisterEnroll } from '@/api/interface/auth'
+import { EmailCheckResponseData, JoinResponseData, RegisterEnroll } from '@/api/interface/auth'
 import { emailCheck, join } from '@/api/service/auth'
 import { useMutation } from '@tanstack/react-query'
 import { AxiosError, AxiosResponse } from 'axios'
@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 export const useSignUp = () => {
   const router = useRouter()
 
-  const { mutate: joinMutation } = useMutation(join, {
+  const { mutate: joinMutation } = useMutation<JoinResponseData, AxiosError, RegisterEnroll>(join, {
     onSuccess: (data) => {
       Swal.fire({
         title: '회원가입이 완료되었습니다.',
