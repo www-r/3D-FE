@@ -13,7 +13,7 @@ export interface ReviewData {
   hasAsset: boolean
   hasReview: boolean
   hasWishlist: boolean
-  reviewList: Review[] | undefined
+  reviewList: Review[] | []
 }
 
-export type ReviewReponse = ApiResponse<Review>
+export type ReviewReponse = ApiResponse<ReviewData>
