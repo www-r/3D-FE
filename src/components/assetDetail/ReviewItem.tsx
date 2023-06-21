@@ -7,7 +7,8 @@ interface Props {
   review: Review
 }
 
-export default function ReviewItem({ review }): Props {
+export default function ReviewItem({ review }: Props) {
+  console.log({ review })
   return (
     <section className="mb-[0.8rem] w-full bg-neutral-navy-900">
       <div className="px-[1.2rem] py-[0.8rem]">

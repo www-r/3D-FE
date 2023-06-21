@@ -10,29 +10,21 @@ interface Props {
 }
 
 export default function ReviewList({ id, setIsWritten }: Props) {
-  //   const [reviews, setReviews] = useState<Review[]>([])
   const { reviews } = useReview(id)
   console.log(reviews)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await getAllReviews(id)
-      console.log(res.data)
-
-      // setIsWritten()
-      setReviews(res.data.reviewList)
-    }
-    fetchData()
-  }, [id])
+  // setIsWritten()
+  //   setReviews(res.data.reviewList)
 
   //   const reviewList = res.data.reviewList
   //   const data = reviewList.filter((item) => item.id === userId)
 
   return (
     <ul className="mb-[0.8rem]">
-      {/* {reviews?.map((review: Review) => (
-        <ReviewItem key={review.reviewId} review={review} />
-      ))} */}
+      {reviews &&
+        reviews.reviewList.map((review: Review) => (
+          <ReviewItem key={review.reviewId} review={review} />
+        ))}
     </ul>
   )
 }
