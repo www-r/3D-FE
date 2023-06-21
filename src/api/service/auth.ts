@@ -8,10 +8,10 @@ import {
   EmailCheckResponseData,
   LoginRequest,
   LoginResponse,
+  PasswordChangeRequest,
   RegisterEnroll,
   WithdrawalRequest,
 } from '../interface/auth'
-
 
 export const login = async <T = LoginResponse>(account: LoginRequest): Promise<T> => {
   const res = await axiosInstance.post<T>(`/login`, account)
@@ -32,10 +32,29 @@ export const logout = async () => {
   return data
 }
 
+export const passwordChange = async (user: PasswordChangeRequest) => {
+  try {
+    const { data } = await axiosInstance.post('/login/change', user)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export const join = async (user: RegisterEnroll) => {
   try {
     const { data } = await axiosInstance.post('/signup', user)
-    console.log(data, '<<<<<<<<<<<<<<data 결과')
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const emailDuplicateCheck = async (email: string) => {
+  try {
+    const data = await axiosInstance.post<EmailCheckResponseData>('/signup/duplicate', {
+      email,
+    })
     return data
   } catch (error) {
     console.log(error)
@@ -44,7 +63,7 @@ export const join = async (user: RegisterEnroll) => {
 
 export const emailCheck = async (email: string) => {
   try {
-    const data = await axiosInstance.post<EmailCheckResponseData>('/signup/duplicate', {
+    const data = await axiosInstance.post<EmailCheckResponseData>('/signup/check', {
       email,
     })
     return data

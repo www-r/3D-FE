@@ -5,7 +5,7 @@ export default function SignUpPage() {
   return (
     <section className="h-screen bg-[url('/background/signup-bg.svg')] bg-cover bg-center">
       <div className="mx-auto flex flex-col items-end justify-center md:h-screen lg:py-0">
-        <div className="rounded-lg w-30% mr-[3%] h-auto justify-center bg-black bg-opacity-80">
+        <div className="mr-[3%] h-auto w-[30%] justify-center rounded-sm bg-black bg-opacity-80">
           <div className="h-full w-full sm:p-8 md:space-y-10">
             <a href="#" className="mb-[10rem] flex items-center">
               <Image src="/logo-title.svg" alt="logo" width={155} height={54} />
