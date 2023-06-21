@@ -1,15 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import { formatPrice } from '@/utils/formatPrice'
+import CustomCheckbox from '../common/CustomCheckbox'
 
 export default function CartItem() {
   return (
     <tr>
       <td>
-        <input type="checkbox" id="i1" className="hidden" />
-        <label htmlFor="i1">
-          <div className="mx-auto h-[3.2rem] w-[3.2rem] bg-checkbox-off bg-cover"></div>
-        </label>
+        <CustomCheckbox id="i1" />
       </td>
       <td className="py-[0.8rem]">
         <Image src="/image.svg" alt="asset" width={80} height={100} className="min-w-[8rem]" />

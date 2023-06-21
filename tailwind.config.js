@@ -36,13 +36,16 @@ module.exports = {
       xl: '3.2rem',
     },
     borderRadius: {
-      'sm': '0.4rem'
+      sm: '0.4rem',
+      lg: '0.8rem',
+      full: '999.9rem'
     },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'checkbox-off': 'url(/icons/checkboxOFF.svg)',
+        'radio-off': 'url(/icons/radioOff.svg)'
       },
       colors: {
         primary: {
@@ -65,6 +68,7 @@ module.exports = {
           2: '#23262D',
           3: '#363B43',
           4: '#151719',
+          'transparent': 'transparent',
         },
         neutral: {
           'white-0': '#FFF',
@@ -79,10 +83,13 @@ module.exports = {
           'navy-1000': '#101010',
         },
         transparent: {
+          0: 'transparent',
           gray: '#EBECF0',
           navy: '#FAFBFC',
+          heart: 'rgba(166, 197, 226, 0.1)',
           'navy-15': 'rgba(250, 251, 252, 0.15)',
           'navy-30': 'rgba(159, 173, 188, 0.3)',
+          'heart': 'rgba(166, 197, 226, 0.1)',
           'navy-second': '#9FADBC',
           blue: '#60AFFF',
           darkblue: '#237FDB',
