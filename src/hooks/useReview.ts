@@ -4,10 +4,10 @@ import { useQuery } from '@tanstack/react-query'
 
 export const useReview = (id: number) => {
   const { data: reviews } = useQuery({
-    queryKey: ['reviews'],
+    queryKey: ['reviews', id],
     queryFn: () => getAllReviews(id),
-    onSuccess: (data) => {
-      console.log(data)
+    select: (data) => {
+      return data.data
     },
   })
 
