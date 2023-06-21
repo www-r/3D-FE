@@ -1,10 +1,17 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { RootState } from '@/store/store'
+import { useSelector } from 'react-redux'
 
 export default function Footer() {
+  const isDrawerOpen = useSelector((state: RootState) => state.drawer.isOpen)
+
+  if (isDrawerOpen) return null
   return (
-    <footer className="w-full bg-bg-2 border-t border-transparent-navy-30">
-      <div className="flex w-[70%] h-[5rem] m-auto items-center justify-between">
+    <footer className="w-full border-t border-transparent-navy-30 bg-bg-2">
+      <div className="m-auto flex h-[5rem] w-[70%] items-center justify-between">
         <div>
           <Image src="/logo-footer.svg" alt="neuroidAsset" width={156} height={36} />
         </div>
