@@ -24,9 +24,7 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, isAgreed, onClose, setI
   }
 
   const handleChangeTermsModal = () => {
-    console.log({ isAgreed }, '>>>>>>>> before setIsAgreed')
     setIsAgreed((isAgreed) => !isAgreed)
-    console.log({ isAgreed }, '>>>>>>>> after setIsAgreed')
   }
 
   if (!isOpen) return null
