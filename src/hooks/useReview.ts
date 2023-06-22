@@ -1,4 +1,3 @@
-import { getAssets } from '@/api/service/asset'
 import { getAllReviews } from '@/api/service/review'
 import { useQuery } from '@tanstack/react-query'
 
