@@ -21,13 +21,7 @@ export default function AssetDetailReview({ asset }: Props) {
           <Star star={asset.rating} size="lg" />
         </div>
         <div>
-          <div className="mb-[2rem] flex h-[4rem] justify-between">
-            <h3>리뷰 작성하기</h3>
-            <div className="rounded h-[3.6rem] w-[18.1rem] bg-neutral-navy-900 px-6 py-2">
-              <Star star={asset.rating} size="sm" />
-            </div>
-          </div>
-          {isWritten && <CreateReview />}
+          <CreateReview id={asset.assetId} />
           <ReviewList id={asset.assetId} setIsWritten={setIsWritten} />
         </div>
       </article>
