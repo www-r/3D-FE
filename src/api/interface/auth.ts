@@ -84,17 +84,6 @@ export interface PasswordChangeRequest {
   code: string
 }
 
-// 회원탈퇴 시 유저데이터
-export interface WithdrawalRequest extends FieldValues {
-  userId: number | undefined
-  userData: {
-    email: string | undefined
-    password: string | undefined
-  }
-  email?: string
-  password?: string
-}
-
 export interface EditProfileRequest {
   userId: number | undefined
   userData: {
@@ -107,10 +96,4 @@ export interface EditProfileHookFormProps extends EditProfileRequest {
   curPassword: string
   newPassword: string
   passwordConfirm: string
-}
-
-// 회원 탈퇴
-export interface WithdrawalResponseData {
-  status: number
-  msg: string
 }
