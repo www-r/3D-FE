@@ -3,21 +3,7 @@
  */
 import { readFile } from 'fs/promises'
 import path from 'path'
-
-export interface OrderHistory {
-  id: number
-  title: string
-  price: number
-  discount: number
-  categories: Categories
-  createdAt: string
-  updatedAt: string
-}
-
-interface Categories {
-  title: string
-  tags: string[]
-}
+import { OrderHistory } from '../interface/payment'
 
 export async function getAllOrderHistory(): Promise<OrderHistory[]> {
   const filePath = path.join(process.cwd(), 'src', 'data', 'assets.json')

@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Logout from '../logout/Logout'
+import Logout from '../../logout/Logout'
 import { getToken, setToken } from '@/utils/token'
+import OrderHistoryButton from './OrderHistoryButton'
 
 export default function Header() {
   const [accessToken, setAccessToken] = useState(false)
@@ -51,9 +52,12 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="leading-[4.4rem]">
-                  <Link href="/my-page/history" className="text-neutral-navy-100">
-                    주문 내역
-                  </Link>
+                  <OrderHistoryButton
+                    setSelectedTab={function (prev: boolean): void {
+                      throw new Error('Function not implemented.')
+                    }}
+                    selectedTab={false}
+                  />
                 </li>
                 <Logout setAccessToken={setAccessToken} />
               </ul>

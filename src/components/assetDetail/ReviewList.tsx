@@ -4,6 +4,7 @@ import { Review, ReviewData } from '@/api/interface/review'
 import ReviewItem from './ReviewItem'
 import { useReview } from '@/hooks/useReview'
 
+
 interface Props {
   id: number
   setIsWritten: (isWritten: boolean) => void
@@ -11,7 +12,6 @@ interface Props {
 
 export default function ReviewList({ id, setIsWritten }: Props) {
   const { reviews } = useReview(id)
-  console.log(reviews)
 
   // setIsWritten()
   //   setReviews(res.data.reviewList)
@@ -21,10 +21,16 @@ export default function ReviewList({ id, setIsWritten }: Props) {
 
   return (
     <ul className="mb-[0.8rem]">
-      {reviews &&
+      {reviews?.hasReview ? (
         reviews.reviewList.map((review: Review) => (
           <ReviewItem key={review.reviewId} review={review} />
-        ))}
+        ))
+      ) : (
+        <section className="items-center justify-between mb-[0.8rem] flex h-[8rem] flex-col bg-neutral-navy-900 px-[1.6rem] py-[1.2rem]">
+          <div className="h-[2.4rem] text-sl text-neutral-navy-200">아직 리뷰가 없습니다</div>
+          <div className="text-mm text-neutral-navy-300">리뷰를 작성해보세요!</div>
+        </section>
+      )}
     </ul>
   )
 }
