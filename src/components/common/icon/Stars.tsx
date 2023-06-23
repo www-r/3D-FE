@@ -17,7 +17,7 @@ export default function Stars({ isFilled, size }: Props) {
       >
         <path
           d="M12 1L15.399 7.91167L23 9.02681L17.5 14.4038L18.798 22L12 18.4117L5.202 22L6.5 14.4038L1 9.02681L8.601 7.91167L12 1Z"
-          fill={isFilled ? '#C7D1DB' : '#3399FF'}
+          fill={isFilled ? '#3399FF' : '#C7D1DB'}
         />
       </svg>
     </div>
