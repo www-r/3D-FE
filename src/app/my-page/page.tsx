@@ -5,11 +5,11 @@ import Layout from '@/components/common/Layout'
 import AccountSettingPage from './setting/page'
 import OrderHistoryPage from './orderHistory/page'
 
-type accountInfoProps = {
-  userId: number
-}
+// type accountInfoProps = {
+//   userId: number
+// }
 
-export default function MyPage({ userId }: accountInfoProps) {
+export default function MyPage() {
   return (
     <Layout>
       <AccountSettingPage />
