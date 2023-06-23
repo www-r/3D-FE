@@ -4,6 +4,8 @@ import Image from 'next/image'
 
 export default function LoginPage() {
   return (
+    <section className="h-screen bg-[url('/background/login-bg.svg')] bg-cover bg-center">
+
     <AuthContainer>
       <div className="mt-[46%]">
         <div className="flex flex-col">
@@ -28,5 +30,6 @@ export default function LoginPage() {
         </div>
       </div>
     </AuthContainer>
+    </section>
   )
 }
