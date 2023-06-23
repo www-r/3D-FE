@@ -34,7 +34,7 @@ function Star({ star, size }: Props) {
   ))
 
   return (
-    <div className="w-[20.2rem] flex justify-between items-center relative">
+    <div className="relative flex w-[20.2rem] items-center justify-between">
       <span
         className={`${
           size === 'sm' ? 'text-[1.4rem]' : 'text-[2.6rem] font-bold text-primary-main'
@@ -42,11 +42,11 @@ function Star({ star, size }: Props) {
       >
         {star}
       </span>
-      <div className="w-[12rem] flex">
-        <div className={`flex z-10 absolute top-1/2 transform -translate-y-1/2`}>{emptyStars}</div>
+      <div className="flex w-[12rem]">
+        <div className={`absolute top-1/2 z-10 flex -translate-y-1/2 transform`}>{emptyStars}</div>
         <div
           style={{ width: `${starsWidth}rem` }}
-          className={`flex z-10  absolute overflow-hidden top-1/2 transform -translate-y-1/2`}
+          className={`absolute top-1/2  z-10 flex -translate-y-1/2 transform overflow-hidden`}
         >
           {filledStars}
         </div>

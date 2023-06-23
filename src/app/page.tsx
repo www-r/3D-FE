@@ -1,19 +1,20 @@
-import { getAllAssets } from '@/api/service/assets'
+import { getAssets } from '@/api/service/asset'
 import AssetDetail from '@/components/assetDetail/AssetDetail'
 import AssetsList from '@/components/assets/AssetsList'
+import IndividualAsset from '@/components/assets/IndividualAsset'
 import Drawer from '@/components/common/Drawer'
 import Footer from '@/components/common/Footer'
 import Layout from '@/components/common/Layout'
 
-export default async function HomePage() {
-  const assets = await getAllAssets()
+
+export default function HomePage() {
 
   return (
     <Layout>
       <div className="flex">
-        <div className="h-[100%]">
-          <section className="min-h-[calc(100vh-12.3rem)] w-full px-[2.3rem] pt-8">
-            <AssetsList assets={assets} />
+        <div className="h-[100%] w-full">
+          <section className="min-h-[calc(100vh-12.3rem)] px-[2.3rem] pt-8">
+            <IndividualAsset />
           </section>
           <Footer />
         </div>

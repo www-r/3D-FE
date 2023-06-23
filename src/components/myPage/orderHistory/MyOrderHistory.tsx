@@ -32,6 +32,23 @@ export default function MyOrderHistory() {
           <MyOrderCalendar />
         </div>
         <div className="h-[70%] w-full justify-center">
+          <div className="mx-1 mb-3 mt-6 flex h-[2.5rem] w-full justify-between text-[1.4rem]">
+            <p className="mr-[16rem]">주문일자</p>
+            <p className="mr-[30rem]">주문번호</p>
+            <p className="mr-[2rem]">구매한 에셋 수</p>
+            <p className="mr-[2.6rem]">결제금액</p>
+          </div>
+          <ul className="flex flex-col">
+            <MyOrderHistoryItem onClick={handleMoveToOrderDetail} />
+            {/* {assets.map((asset) => (
+        <MyOrderHistoryItem key={asset.id} asset={asset} />
+      ))} */}
+          </ul>
+        </div>
+        <div className="mb-8 mt-6 w-full">
+          <MyOrderCalendar />
+        </div>
+        <div className="h-[70%] w-full justify-center">
           <div className="mx-1 my-3 flex h-[2.5rem] w-full justify-between text-[0.8rem] dark:text-neutral-navy-100">
             <h1 className="mr-[20rem]">주문일자</h1>
             <h1 className="mr-[36.2rem]">주문번호</h1>

@@ -1,29 +1,26 @@
 /**
  * 로그인, 회원가입 등 인증관련 Interface
-*/
+ */
 import { FieldValues } from 'react-hook-form'
-
-export interface LoginResponseData {
-  data?:
-    | {
-        id: number
-        email: string
-        loginChecked: boolean
-      }
-    | undefined
-}
-
+import { ApiResponse } from '.'
 export interface LoginRequest {
   email: string
   password: string
-  loginChecked: boolean
+  loginChecked?: boolean
 }
+
+export interface UserId {
+  userId: number
+}
+
+export type LoginResponse = ApiResponse<UserId>
 
 export interface RegisterRequest extends LoginRequest {
   firstName: string
   lastName: string
   email: string
   password: string
+  passwordConfirm?: string
 }
 
 export interface UserPayload {
@@ -51,6 +48,22 @@ export interface RegisterEnroll {
   password: string
 }
 
+export interface JoinResponseData {
+  status: number
+  msg: string
+  data: boolean
+}
+
+export interface PasswordChangeRequest {
+  email: string
+  verifiedCode: string
+  password: string
+}
+export interface EmailCheckResponseData {
+  status: number
+  msg: string
+  data: boolean
+}
 export interface EmailCheckRequest {
   email: string
 }
@@ -73,6 +86,7 @@ export interface EditProfileRequest {
   }
 }
 
+// 회원 탈퇴
 export interface WithdrawalResponseData {
   status: number
   msg: string

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import AssetDetailContent from './AssetDetailContent'
 import AssetDetailNav from './AssetDetailNav'
-import AssetDetailWishlist from './AssetDetailWishlist'
+import AssetDetailAddCart from './AssetDetailAddCart'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store/store'
 import AssetDetailReview from './AssetDetailReview'
@@ -17,7 +17,7 @@ export default function AssetDetail() {
     <div>
       <AssetDetailNav selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
       {selectedTab ? <AssetDetailContent asset={asset} /> : <AssetDetailReview asset={asset} />}
-      <AssetDetailWishlist asset={asset} />
+      <AssetDetailAddCart asset={asset} />
     </div>
   )
 }
