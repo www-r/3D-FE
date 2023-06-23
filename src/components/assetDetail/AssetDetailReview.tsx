@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import CreateReview from './CreateReview'
-import { Asset } from '@/api/interface/asset'
+import { AssetDetail } from '@/api/interface/asset'
 import ReviewList from './ReviewList'
 import Rating from '../common/Rating'
 
 interface Props {
-  asset: Asset
+  asset: AssetDetail
 }
 
 export default function AssetDetailReview({ asset }: Props) {
