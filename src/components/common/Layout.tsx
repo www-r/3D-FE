@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import SideNav from './sideNav'
+import SideNav from './sideNav/SideNav'
 import Header from './header/Header'
 
 export default function Layout({ children }: { children: ReactNode }) {
