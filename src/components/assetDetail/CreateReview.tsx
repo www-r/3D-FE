@@ -1,22 +1,75 @@
 'use client'
 
+import { RootState } from '@/store/store'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, FormEvent, ChangeEvent } from 'react'
+import { useSelector } from 'react-redux'
+import WriteStar from '../common/WriteRating'
+import { CreateReview } from '@/api/interface/review'
+import { usePostReview } from '@/hooks/usePostReview'
 
-export default function CreateReview() {
-  const [editedReview, setEditedReview] = useState(null)
+interface Props {
+  id: number
+}
 
-  const handleClick = () => {}
+export default function CreateReview({ id }: Props) {
+  const userId = useSelector((state: RootState) => state.user.userId)
+  const [editedReview, setEditedReview] = useState('')
+  const [isPressedBtn, setIsPressedBtn] = useState(false)
+  const [reviewData, setReviewData] = useState<CreateReview>({ userId, rating: 0, content: '' })
+
+  const { createReview } = usePostReview(id)
+
+  console.log(reviewData)
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    createReview(reviewData)
+    setIsPressedBtn(false)
+  }
+
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setReviewData({ ...reviewData, content: e.target.value })
+  }
 
   return (
-    <div className="bg-neutral-navy-900 px-[2.4rem] py-[1.2rem] mb-[2rem] h-[13.3rem] rounded flex flex-col justify-between">
-      <p>해당 제품에 대한 리뷰를 작성해주세요</p>
-      <div className="flex justify-center items-center bg-bg-0 py-[0.8rem] px-[2.4rem] rounded">
-        <button onClick={handleClick} className="flex text-primary-main">
-          <Image src="/icons/edit.svg" alt="edit" width={24} height={24} />
-          <span className="ml-1">작성하기</span>
-        </button>
+    <>
+      <div className="mb-[2rem] flex h-[4rem] justify-between">
+        <h3>리뷰 작성하기</h3>
+        <div className="h-[3.6rem] w-[18.1rem] rounded-[0.4rem] bg-neutral-navy-900 px-6 py-2">
+          <WriteStar reviewData={reviewData} setReviewData={setReviewData} />
+        </div>
       </div>
-    </div>
+      <div className="mb-[2rem] flex h-[13.3rem] flex-col justify-between rounded-[0.4rem] bg-neutral-navy-900 px-[2.4rem] py-[1.2rem]">
+        {isPressedBtn ? (
+          <textarea
+            className="rounded-[0.4rem] bg-bg-0 px-[0.8rem] py-[0.4rem]"
+            value={reviewData.content}
+            onChange={handleChange}
+          />
+        ) : (
+          <p>해당 제품에 대한 리뷰를 작성해주세요</p>
+        )}
+        <div className="flex items-center justify-center rounded-[0.4rem] bg-bg-0 px-[2.4rem] py-[0.8rem]">
+          {isPressedBtn ? (
+            <form onSubmit={handleSubmit}>
+              <button type="submit" className="flex text-primary-main">
+                <Image src="/icons/edit.svg" alt="edit" width={24} height={24} />
+                <span className="ml-1">작성하기</span>
+              </button>
+            </form>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setIsPressedBtn(true)}
+              className="flex  text-primary-main"
+            >
+              <Image src="/icons/edit.svg" alt="edit" width={24} height={24} />
+              <span className="ml-1">작성하기</span>
+            </button>
+          )}
+        </div>
+      </div>
+    </>
   )
 }
