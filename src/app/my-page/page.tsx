@@ -3,10 +3,13 @@
  */
 import Layout from '@/components/common/Layout'
 import AccountSettingPage from './setting/page'
-import OrderHistoryDetailPage from './orderHistory/[slug]/page'
 import OrderHistoryPage from './orderHistory/page'
 
-export default function MyPage() {
+type accountInfoProps = {
+  userId: number
+}
+
+export default function MyPage({ userId }: accountInfoProps) {
   return (
     <Layout>
       <AccountSettingPage />

@@ -1,9 +1,5 @@
-import MyOrderHistory from '@/components/myPage/orderHistory/MyOrderHistroy'
+import MyOrderHistory from '@/components/myPage/orderHistory/MyOrderHistory'
 
 export default function OrderHistoryPage() {
-  return (
-    <>
-      <MyOrderHistory />
-    </>
-  )
+  return <></>
 }

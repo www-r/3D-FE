@@ -86,7 +86,7 @@ export default function MyOrderCalendar() {
 
   return (
     <div className="mb-8 mt-6 flex w-[65%] text-neutral-navy-200">
-      <div className="rounded-lg flex border border-gray-600 bg-neutral-navy-950 p-2.5 placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+      <div className="flex rounded-sm border border-gray-600 bg-neutral-navy-950 p-2.5 placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
         {/* 조회 시작날짜 캘린더 */}
         <DatePicker
           locale={ko}
@@ -111,7 +111,7 @@ export default function MyOrderCalendar() {
 
       <span className="mx-8 pt-2 text-center text-[1.6rem]">~</span>
 
-      <div className="rounded-lg flex border border-gray-600 bg-neutral-navy-950 p-2.5 placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+      <div className="flex rounded-sm border border-gray-600 bg-neutral-navy-950 p-2.5 placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
         {/* 조회 종료날짜 캘린더 */}
         <DatePicker
           locale={ko}
