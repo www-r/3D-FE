@@ -1,7 +1,6 @@
 import React, { useEffect, useState, Dispatch, SetStateAction } from 'react'
 import Image from 'next/image'
 import Stars from './icon/Stars'
-import { formatRating } from '../../utils/formatRating'
 import { CreateReview } from '@/api/interface/review'
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
   setReviewData: Dispatch<SetStateAction<CreateReview>>
 }
 
-export default function WriteStar({ reviewData, setReviewData }: Props) {
+export default function WriteRating({ reviewData, setReviewData }: Props) {
   const ARRAY = [0, 1, 2, 3, 4]
 
   const [clicked, setClicked] = useState([false, false, false, false, false])
@@ -24,12 +23,12 @@ export default function WriteStar({ reviewData, setReviewData }: Props) {
   }
 
   return (
-    <section className="flex justify-center">
-      <div className="mr-[1.2rem] w-[2.1rem] text-mm">{reviewData.rating}</div>
+    <section className="item-center flex justify-center">
+      <span className="mr-[1.2rem] w-[2.1rem] text-mm">{reviewData.rating}</span>
       <ul className="flex w-[10rem] items-center">
         {ARRAY.map((item, index) => (
           <li className="mr-[0.8rem]" key={index} onClick={() => handleStarClick(item)}>
-            <Stars size={13} isFilled={!clicked[index]} />
+            <Stars size={13} isFilled={clicked[index]} />
           </li>
         ))}
       </ul>
