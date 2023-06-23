@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import SideNavList from './SideNavList'
 import { getAllCategories } from '@/api/service/category'
+import SideNavList from './SideNavList'
 
 export default async function SideNav() {
   const data = await getAllCategories()

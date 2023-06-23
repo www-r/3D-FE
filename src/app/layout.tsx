@@ -1,4 +1,4 @@
-import Header from '@/components/common/Header'
+import Header from '@/components/common/header/Header'
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
 import ReactQueryProvider from '@/reactQuery/Provider'
