@@ -30,7 +30,7 @@ body {
   overflow-y: auto;
   font-size: 1.6rem;
 
-  /* .react-datepicker-popper {
+  .react-datepicker-popper {
     font-size: medium;
     min-width: 17%;
     color: #5b5b5b;
@@ -54,7 +54,7 @@ body {
       cursor: default;
       visibility: hidden;
     }
-  } */
+  }
 }
 
 * {
