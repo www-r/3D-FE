@@ -7,7 +7,7 @@ interface Props {
   assets: Asset[] | undefined
 }
 
-export default function AssetsList({ assets }: Props) {
+export default function AssetList({ assets }: Props) {
   if (!assets) return null
 
   return (
