@@ -1,17 +1,17 @@
 import { LoginRequest } from '@/api/interface/auth'
 import { login } from '@/api/service/auth'
+import { setUser } from '@/store/userSlice'
 import { setToken } from '@/utils/token'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { AxiosError } from 'axios'
+import { useDispatch } from 'react-redux'
 
 export const useLogin = () => {
-  const queryClient = useQueryClient()
+  const dispatch = useDispatch()
 
   const { mutate } = useMutation((account: LoginRequest) => login(account), {
     onSuccess: (data) => {
-      // queryClient.setQueryData(['user', 'id'], data.data.data)
-      // setQueryData inactive 되어 다른페이지에서 getQueryData 할 수 없음
-      // redux 사용해서 userId 전역관리?
+      dispatch(setUser(data.data.userId))
     },
     onError: (err: AxiosError) => {
       console.log(err)

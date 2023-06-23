@@ -3,21 +3,19 @@
 @tailwind utilities;
 
 @layer utilities {
-  @variants responsive {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
-  .space-y-3 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 0;
-  }
+}
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0;
 }
 
 html {
@@ -59,6 +57,9 @@ body {
 
 * {
   box-sizing: border-box;
+}
+li {
+  list-style: none;
 }
 
 input {

@@ -1,14 +1,15 @@
 import Image from 'next/image'
 
 import { Review } from '@/api/interface/review'
-import Star from '../common/Star'
+import Star from '../common/Rating'
 
 interface Props {
   review: Review
 }
 
 export default function ReviewItem({ review }: Props) {
-  console.log({ review })
+  const toggleModal = () => {}
+
   return (
     <section className="mb-[0.8rem] w-full bg-neutral-navy-900">
       <div className="px-[1.2rem] py-[0.8rem]">
@@ -20,8 +21,9 @@ export default function ReviewItem({ review }: Props) {
             </span>
           </div>
           <div className="flex">
-            <Star star={review.rating} size="sm" />
-            <Image src="/icons/moreVertical.svg" alt="menu" width={24} height={24} />
+            <button onClick={toggleModal}>
+              <Image src="/icons/moreVertical.svg" alt="menu" width={24} height={24} />
+            </button>
           </div>
         </div>
         <div className="mb-[0.8rem] text-mm  font-normal text-neutral-navy-100">
