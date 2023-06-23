@@ -5,13 +5,27 @@ import { ApiResponse } from '.'
  * 결제, 결제 내역 관련 Interface
  */
 export interface OrderHistory {
-  id: number
-  title: string
+  orderId: number
+  orderNumber: string
+  orderDate: string
+  totalPrice: number
+  assetCount: number
+}
+
+export interface OrderHistoryDetail {
+  assetId: number
+  assetName: string
+  extension: string
   price: number
-  discount: number
-  categories: Categories
-  createdAt: string
-  updatedAt: string
+  discountPrice: number
+  size: number
+}
+
+export interface OrderHistoryData {
+  orderHistoryList: OrderHistory[]
+  currentPage: number
+  totalPage: number
+  totalElement: number
 }
 
 interface Categories {
