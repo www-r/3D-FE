@@ -2,7 +2,7 @@ import { ApiResponse } from '.'
 
 export interface Review {
   reviewId: number
-  rating: number | string
+  rating: number
   content: string
   userId: number
   firstName: string
