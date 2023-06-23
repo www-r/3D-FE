@@ -14,7 +14,6 @@ import {
   PasswordCheckRequest,
   PasswordSendRequest,
   RegisterEnroll,
-  WithdrawalRequest,
 } from '../interface/auth'
 
 //로그인
@@ -122,12 +121,3 @@ export const joinVerifyConfirm = async (verifyCode: string) => {
   }
 }
 
-//회원 탈퇴
-export const withdrawal = async ({ userId, userData }: WithdrawalRequest) => {
-  const { email, password } = userData
-  const { data } = await axiosInstance.post(`/s/user/${userId}/withdraw`, {
-    email,
-    password,
-  })
-  return data
-}
