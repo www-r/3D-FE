@@ -6,7 +6,7 @@ import { ApiResponse } from '.'
 export interface LoginRequest {
   email: string
   password: string
-  loginChecked?: boolean
+  keepLogin?: boolean
 }
 
 export interface UserId {
@@ -18,16 +18,8 @@ export type LoginResponse = ApiResponse<UserId>
 export interface RegisterRequest extends LoginRequest {
   firstName: string
   lastName: string
-  email: string
-  password: string
+  code: string
   passwordConfirm?: string
-}
-
-export interface UserPayload {
-  id: number
-  email: string
-  firstName: string
-  lastName: string
 }
 
 export interface User {
@@ -37,10 +29,26 @@ export interface User {
   password: string
 }
 
+//이메일중복체크
 export interface EmailCheckRequest {
   email: string
 }
 
+// 회원가입 - 인증코드전송
+export interface JoinVerifyCodeSend {
+  firstName: string
+  lastName: string
+  email: string
+}
+
+//회원가입-인증확인 request
+export interface JoinVerifyConfirmRequest {
+  userId: number
+  email: string
+  code: string
+}
+
+//회원가입등록
 export interface RegisterEnroll {
   firstName: string
   lastName: string
@@ -48,26 +56,35 @@ export interface RegisterEnroll {
   password: string
 }
 
+// 회원가입성공시, response
 export interface JoinResponseData {
   status: number
   msg: string
   data: boolean
 }
 
-export interface PasswordChangeRequest {
-  email: string
-  verifiedCode: string
-  password: string
-}
-export interface EmailCheckResponseData {
-  status: number
-  msg: string
-  data: boolean
-}
-export interface EmailCheckRequest {
+// 비밀번호 변경 - 인증코드 전송 request
+export interface PasswordSendRequest {
+  firstName: string
+  lastName: string
   email: string
 }
 
+// 비밀번호 변경 - 인증코드 확인 request
+export interface PasswordCheckRequest {
+  userId: number
+  email: string
+  code: string
+}
+
+// 비밀번호 변경 request
+export interface PasswordChangeRequest {
+  email: string
+  password: string
+  code: string
+}
+
+// 회원탈퇴 시 유저데이터
 export interface WithdrawalRequest extends FieldValues {
   userId: number | undefined
   userData: {
@@ -86,14 +103,14 @@ export interface EditProfileRequest {
   }
 }
 
-// 회원 탈퇴
-export interface WithdrawalResponseData {
-  status: number
-  msg: string
-}
-
 export interface EditProfileHookFormProps extends EditProfileRequest {
   curPassword: string
   newPassword: string
   passwordConfirm: string
+}
+
+// 회원 탈퇴
+export interface WithdrawalResponseData {
+  status: number
+  msg: string
 }
