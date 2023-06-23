@@ -15,7 +15,7 @@ export default function AssetItem({ asset }: Props) {
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    dispatch(setClickedAsset(asset))
+    dispatch(setClickedAsset(asset.assetId))
     dispatch(openDrawer())
   }
   return (

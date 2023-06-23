@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import AssetsList from './AssetsList'
+import AssetList from './AssetList'
 import PaginationButton from '../common/PaginationButton'
 import { useGetAssets } from '@/hooks/useGetAssets'
 
@@ -17,7 +17,7 @@ export default function IndividualAsset() {
           <span className="text-sl">({assets?.data?.totalElement})</span>
         </div>
       </div>
-      <AssetsList assets={assets?.data?.assetList} />
+      <AssetList assets={assets?.data?.assetList} />
       <PaginationButton
         activePage={activePage}
         setActivePage={setActivePage}

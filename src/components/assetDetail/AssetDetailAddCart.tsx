@@ -1,9 +1,9 @@
-import { Asset } from '@/api/interface/asset'
+import { AssetDetail } from '@/api/interface/asset'
 import WishlistButton from '../common/WishlistButton'
 import { formatPrice } from '@/utils/formatPrice'
 
 interface Props {
-  asset: Asset
+  asset: AssetDetail
 }
 
 export default function AssetDetailAddCart({ asset }: Props) {

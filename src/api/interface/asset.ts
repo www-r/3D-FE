@@ -12,6 +12,21 @@ export interface Asset {
   cartId: number | null
 }
 
+export interface AssetDetail {
+  assetId: number
+  assetName: string
+  price: number
+  fileSize: number
+  fileUrl: string
+  creator: string
+  rating: number
+  reviewCount: number
+  wishCount: number
+  visitCount: number
+  wishlistId: number
+  tagList: string[]
+}
+
 interface AssetData {
   assetList: Asset[]
   size: number
@@ -20,4 +35,6 @@ interface AssetData {
   totalElement: number
 }
 
-export type AssetReponse = ApiResponse<AssetData>
+export type AssetDetailResponse = ApiResponse<AssetDetail>
+
+export type AssetResponse = ApiResponse<AssetData>
