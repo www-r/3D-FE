@@ -5,6 +5,7 @@ import drawerReducer from './drawerSlice'
 import clickedAssetReducer from './clickedAssetSlice'
 import categoryReducer from './setSelectedCategory'
 import tagReducer from './tagSlice'
+import cartReducer from './cartSlice'
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     clickedAsset: clickedAssetReducer,
     category: categoryReducer,
     tag: tagReducer,
+    cart: cartReducer,
   },
 })
 
