@@ -22,7 +22,6 @@ export default function SideNavList({ category }: SideNavListProps) {
   const handleSubcategoryClick = (subcategory: Subcategory) => {
     dispatch(setSelectedTags(subcategory.tags || [])) // 서브카테고리 클릭시 해당 태그로 교체
   }
-  console.log(selectedTags)
 
   return (
     <div>
