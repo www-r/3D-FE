@@ -58,6 +58,9 @@ body {
 * {
   box-sizing: border-box;
 }
+li {
+  list-style: none;
+}
 
 input {
   outline: none;
