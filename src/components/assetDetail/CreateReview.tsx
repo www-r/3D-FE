@@ -4,7 +4,7 @@ import { RootState } from '@/store/store'
 import Image from 'next/image'
 import { useState, FormEvent, ChangeEvent } from 'react'
 import { useSelector } from 'react-redux'
-import WriteStar from '../common/WriteStar'
+import WriteStar from '../common/WriteRating'
 import { CreateReview } from '@/api/interface/review'
 import { usePostReview } from '@/hooks/usePostReview'
 
@@ -18,17 +18,17 @@ export default function CreateReview({ id }: Props) {
   const [isPressedBtn, setIsPressedBtn] = useState(false)
   const [reviewData, setReviewData] = useState<CreateReview>({ userId, rating: 0, content: '' })
 
-  const { createReview } = usePostReview(reviewData, id)
+  const { createReview } = usePostReview(id)
 
   console.log(reviewData)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    createReview(reviewData, id)
+    createReview(reviewData)
     setIsPressedBtn(false)
   }
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setReviewData({ ...reviewData, content: e.target.value })
   }
 
@@ -42,7 +42,11 @@ export default function CreateReview({ id }: Props) {
       </div>
       <div className="mb-[2rem] flex h-[13.3rem] flex-col justify-between rounded-[0.4rem] bg-neutral-navy-900 px-[2.4rem] py-[1.2rem]">
         {isPressedBtn ? (
-          <input value={reviewData.content} onChange={handleChange} />
+          <textarea
+            className="rounded-[0.4rem] bg-bg-0 px-[0.8rem] py-[0.4rem]"
+            value={reviewData.content}
+            onChange={handleChange}
+          />
         ) : (
           <p>해당 제품에 대한 리뷰를 작성해주세요</p>
         )}
