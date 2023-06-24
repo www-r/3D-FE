@@ -18,13 +18,13 @@ export default function CreateReview({ id }: Props) {
   const [isPressedBtn, setIsPressedBtn] = useState(false)
   const [reviewData, setReviewData] = useState<CreateReview>({ userId, rating: 0, content: '' })
 
-  const { createReview } = usePostReview(id)
+  const { createMyReview } = usePostReview(id)
 
   console.log(reviewData)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    createReview(reviewData)
+    createMyReview(reviewData)
     setIsPressedBtn(false)
   }
 
