@@ -1,5 +1,10 @@
 import { axiosInstance } from '../axios'
-import { CreateReview, CreateReviewResponse, DeleteReviewResponse, ReviewReponse } from '../interface/review'
+import {
+  CreateReview,
+  CreateReviewResponse,
+  DeleteReviewResponse,
+  ReviewReponse,
+} from '../interface/review'
 
 export const getAllReviews = async <T = ReviewReponse>(id: number): Promise<T> => {
   const res = await axiosInstance.get<T>(`/assets/${id}/reviews`)
@@ -25,7 +30,10 @@ export const editReview = async <T = CreateReviewResponse>(
 export const deleteReview = async <T = DeleteReviewResponse>(
   id: number,
   reviewId: number,
+  userId: number,
 ): Promise<T> => {
-  const res = await axiosInstance.post<T>(`s/assets/${id}/reviews${reviewId}/delete`)
+  const res = await axiosInstance.post<T>(`s/assets/${id}/reviews/${reviewId}/delete`, {
+    userId,
+  })
   return res.data
 }
