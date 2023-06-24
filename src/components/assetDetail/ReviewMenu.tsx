@@ -1,3 +1,4 @@
+import { usePostReview } from '@/hooks/usePostReview'
 import React from 'react'
 
 interface Props {
@@ -6,8 +7,12 @@ interface Props {
 }
 
 export default function ReviewMenu({ reviewId, assetId }: Props) {
+  const { deleteMyReview } = usePostReview(assetId)
+
   const handleEdit = () => {}
-  const handleDelete = () => {}
+  const handleDelete = () => {
+    deleteMyReview(reviewId)
+  }
 
   return (
     <ul
@@ -16,13 +21,13 @@ export default function ReviewMenu({ reviewId, assetId }: Props) {
     >
       <li
         onClick={handleEdit}
-        className="flex h-1/2 items-center rounded-t-[0.4rem]   border-b pl-[1.2rem]  hover:bg-bg-2"
+        className="flex h-1/2 cursor-pointer items-center rounded-t-[0.4rem] border-b pl-[1.2rem]  hover:bg-bg-2"
       >
         Edit
       </li>
       <li
         onClick={handleDelete}
-        className="flex h-1/2 items-center rounded-[0.4rem] pl-[1.2rem] hover:border-0 hover:bg-bg-2"
+        className="flex h-1/2 cursor-pointer items-center rounded-[0.4rem] pl-[1.2rem] hover:border-0 hover:bg-bg-2"
       >
         Delete
       </li>
