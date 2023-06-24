@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import CreateReview from './CreateReview'
 import { AssetDetail } from '@/api/interface/asset'
 import ReviewList from './ReviewList'
 import Rating from '../common/Rating'
@@ -9,7 +8,6 @@ interface Props {
 }
 
 export default function AssetDetailReview({ asset }: Props) {
-  const [isWritten, setIsWritten] = useState(false)
 
   return (
     <>
@@ -20,8 +18,7 @@ export default function AssetDetailReview({ asset }: Props) {
           <Rating star={asset.rating} size={20} />
         </div>
         <div>
-          <CreateReview id={asset.assetId} />
-          <ReviewList id={asset.assetId} setIsWritten={setIsWritten} />
+          <ReviewList id={asset.assetId} />
         </div>
       </article>
     </>
