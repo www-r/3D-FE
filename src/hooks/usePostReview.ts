@@ -19,6 +19,12 @@ export const usePostReview = (id: number) => {
       // Return a context with the previous and new todo
       return { prevReview, data }
     },
+    onError: (_error, _data, context) => {
+      queryClient.setQueriesData(['review', id], context?.prevReview)
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(['review', id])
+    },
   })
 
   return { createReview }
