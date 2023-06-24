@@ -1,11 +1,14 @@
-import { CreateReview } from '@/api/interface/review'
-import { postReview } from '@/api/service/review'
+import { CreateReview, DeleteReview } from '@/api/interface/review'
+import { deleteReview, postReview } from '@/api/service/review'
+import { RootState } from '@/store/store'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useSelector } from 'react-redux'
 
 export const usePostReview = (id: number) => {
+  const userId = useSelector((state: RootState) => state.user.userId)
   const queryClient = useQueryClient()
 
-  const { mutate: createReview } = useMutation({
+  const { mutate: createMyReview } = useMutation({
     mutationFn: (review: CreateReview) => postReview(review, id),
     onMutate: async (data) => {
       await queryClient.cancelQueries({ queryKey: ['review', id] })
@@ -27,5 +30,21 @@ export const usePostReview = (id: number) => {
     },
   })
 
-  return { createReview }
+  const { mutate: deleteMyReview } = useMutation({
+    mutationFn: (reviewId: number) => deleteReview(id, reviewId, userId),
+    onMutate: async (data) => {
+      await queryClient.cancelQueries({ queryKey: ['review', id] })
+      const prevReview = queryClient.getQueryData(['review', id])
+      queryClient.setQueryData(['review', id], data)
+      return { prevReview, data }
+    },
+    onError: (_error, _data, context) => {
+      queryClient.setQueriesData(['review', id], context?.prevReview)
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(['review', id])
+    },
+  })
+
+  return { createMyReview, deleteMyReview }
 }
