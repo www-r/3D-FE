@@ -12,3 +12,8 @@ export const cartCount = async (user: number) => {
     return 0
   }
 }
+
+export const cartList = async (user: number) => {
+  const res = await axiosInstance.get(`/s/user/${user}/cart`)
+  return res.data
+}
