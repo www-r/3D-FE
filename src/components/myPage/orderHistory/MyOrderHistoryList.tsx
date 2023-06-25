@@ -17,6 +17,7 @@ export default function MyOrderHistoryList({ orderHistories }: OrderHistoryProps
       <ul className="flex flex-col">
         {orderHistories.map((orderHistory) => (
           <MyOrderHistoryItem key={orderHistory.orderId} orderHistory={orderHistory} />
+          // <MyOrderHistoryItem key={orderHistory.orderId} orderHistory={orderHistory} />
         ))}
       </ul>
     </>
