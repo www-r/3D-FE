@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getAllReviews } from '@/api/service/review'
-import { Review, ReviewData } from '@/api/interface/review'
+import { PostReview, Review, ReviewData } from '@/api/interface/review'
 import ReviewItem from './ReviewItem'
 import { useReview } from '@/hooks/useReview'
 import CreateReview from './CreateReview'
@@ -13,17 +13,39 @@ interface Props {
 
 export default function ReviewList({ id }: Props) {
   const userId = useSelector((state: RootState) => state.user.userId)
-
+  const [isShownCreateReview, setIsShownCreateReview] = useState(false)
   const { reviews } = useReview(id)
+  const [reviewData, setReviewData] = useState<PostReview>({ userId, rating: 0, content: '' })
+  const [isEditMode, setIsEditMode] = useState(false)
 
-  console.log({ reviews })
+  useEffect(() => {
+    if (!!userId && reviews?.hasAsset && !reviews?.hasReview) {
+      setIsShownCreateReview(true)
+    } else {
+      setIsShownCreateReview(false)
+    }
+  }, [reviews, userId])
 
   return (
     <>
-      {!!userId && reviews?.hasAsset && !reviews?.hasReview && <CreateReview id={id} />}
+      {isShownCreateReview && (
+        <CreateReview
+          id={id}
+          reviewData={reviewData}
+          setReviewData={setReviewData}
+          isEditMode={isEditMode}
+        />
+      )}
       <ul className="mb-[0.8rem]">
         {reviews?.reviewList.map((review: Review) => (
-          <ReviewItem key={review.reviewId} review={review} assetId={id} />
+          <ReviewItem
+            key={review.reviewId}
+            review={review}
+            assetId={id}
+            isShownCreateReview={isShownCreateReview}
+            setIsShownCreateReview={setIsShownCreateReview}
+            setIsEditMode={setIsEditMode}
+          />
         ))}
       </ul>
       {reviews?.reviewList.length === 0 && !reviews?.hasAsset && !reviews?.hasReview && (

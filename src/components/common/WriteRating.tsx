@@ -1,11 +1,11 @@
 import React, { useEffect, useState, Dispatch, SetStateAction } from 'react'
 import Image from 'next/image'
 import Stars from './icon/Stars'
-import { CreateReview } from '@/api/interface/review'
+import { PostReview } from '@/api/interface/review'
 
 interface Props {
-  reviewData: CreateReview
-  setReviewData: Dispatch<SetStateAction<CreateReview>>
+  reviewData: PostReview
+  setReviewData: Dispatch<SetStateAction<PostReview>>
 }
 
 export default function WriteRating({ reviewData, setReviewData }: Props) {
