@@ -28,11 +28,6 @@ export interface OrderHistoryData {
   totalElement: number
 }
 
-interface Categories {
-  title: string
-  tags: string[]
-}
-
 //주문 내역
 export interface OrderHistoryResponseData extends FieldValues {
   data: [
@@ -49,6 +44,7 @@ export interface OrderHistoryResponseData extends FieldValues {
 //주문내역 상세보기
 export interface OrderHistoryDetailResponseData extends FieldValues {
   data: {
+    //주문한 에셋들
     orderProductList: [
       {
         assetId: number
@@ -59,6 +55,14 @@ export interface OrderHistoryDetailResponseData extends FieldValues {
         size: number
       },
     ]
+    // 주문정보
+    orderDetail: {
+      orderId: number
+      orderNumber: number
+      orderDate: Date | string
+      totalPrice: number
+      assetCount: number
+    }
   }
 }
 

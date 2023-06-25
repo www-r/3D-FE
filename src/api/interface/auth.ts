@@ -29,6 +29,16 @@ export interface User {
   password: string
 }
 
+export interface UserResponseData {
+  data?: {
+    id: number
+    firstName: string
+    lastName: string
+    email: string
+    createdAt: Date | string
+  }
+}
+
 //이메일중복체크
 export interface EmailCheckRequest {
   email: string
@@ -84,16 +94,16 @@ export interface PasswordChangeRequest {
   code: string
 }
 
-export interface EditProfileRequest {
-  userId: number | undefined
-  userData: {
-    curPassword: string
-    newPassword: string
-  }
-}
+// export interface EditProfileRequest {
+//   userId: number | undefined
+//   userData: {
+//     curPassword: string
+//     newPassword: string
+//   }
+// }
 
-export interface EditProfileHookFormProps extends EditProfileRequest {
-  curPassword: string
-  newPassword: string
-  passwordConfirm: string
-}
+// export interface EditProfileHookFormProps extends EditProfileRequest {
+//   curPassword: string
+//   newPassword: string
+//   passwordConfirm: string
+// }

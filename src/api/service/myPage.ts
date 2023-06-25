@@ -3,15 +3,14 @@
  */
 
 import { axiosInstance } from '../axios'
-import { UserId } from '../interface/auth'
+import { User, UserId, UserResponseData } from '../interface/auth'
 import { WithdrawRequest } from '../interface/myPage'
 import { OrderHistoryResponse, OrderHistoryResponseData } from '../interface/payment'
 
 //유저정보조회
-export const myPageGetUser = async ({ userId }: UserId) => {
-  if (!userId) return null
-  const res = await axiosInstance.get(`/s/user/${userId}`)
-  return res
+export const getUserInfo = async <T = UserResponseData>(id: number): Promise<T> => {
+  const res = await axiosInstance.get(`/s/user/`)
+  return res.data
 }
 
 //회원 탈퇴
