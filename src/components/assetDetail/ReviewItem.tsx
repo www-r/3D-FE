@@ -20,10 +20,10 @@ export default function ReviewItem({
   setIsEditMode,
 }: Props) {
   const userId = useSelector((state: RootState) => state.user.userId)
-  const [isClicked, setIsClicked] = useState(false)
+  const [isShownReviewMenu, setIsShownReviewMenu] = useState(false)
 
   const toggleMenu = () => {
-    setIsClicked((prev) => !prev)
+    setIsShownReviewMenu((prev) => !prev)
   }
 
   console.log({ review })
@@ -44,12 +44,13 @@ export default function ReviewItem({
               <button onClick={toggleMenu}>
                 <Image src="/icons/moreVertical.svg" alt="menu" width={24} height={24} />
               </button>
-              {isClicked && (
+              {isShownReviewMenu && (
                 <ReviewMenu
                   reviewId={review.reviewId}
                   assetId={assetId}
                   setIsShownCreateReview={setIsShownCreateReview}
                   setIsEditMode={setIsEditMode}
+                  setIsShownReviewMenu={setIsShownReviewMenu}
                 />
               )}
             </div>

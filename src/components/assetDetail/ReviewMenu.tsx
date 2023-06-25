@@ -8,6 +8,7 @@ interface Props {
   assetId: number
   setIsShownCreateReview: (data: boolean) => void
   setIsEditMode: (data: boolean) => void
+  setIsShownReviewMenu: (data: boolean) => void
 }
 
 export default function ReviewMenu({
@@ -15,6 +16,7 @@ export default function ReviewMenu({
   assetId,
   setIsShownCreateReview,
   setIsEditMode,
+  setIsShownReviewMenu,
 }: Props) {
   const { deleteMyReview } = usePostReview(assetId, reviewId)
   const dispatch = useDispatch()
@@ -23,9 +25,11 @@ export default function ReviewMenu({
     dispatch(setClickedReview(reviewId))
     setIsShownCreateReview(true)
     setIsEditMode(true)
+    setIsShownReviewMenu(false)
   }
   const handleDelete = () => {
     deleteMyReview()
+    setIsEditMode(false)
   }
 
   return (
