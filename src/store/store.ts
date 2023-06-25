@@ -4,6 +4,7 @@ import clickedAssetReducer from './clickedAssetSlice'
 import clickedReviewReducer from './clickedReviewSlice'
 import categoryReducer from './setSelectedCategory'
 import tagReducer from './tagSlice'
+import cartReducer from './cartSlice'
 import userReducer from './userSlice'
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
     clickedReview: clickedReviewReducer,
     category: categoryReducer,
     tag: tagReducer,
+    cart: cartReducer,
     user: userReducer,
   },
 })
