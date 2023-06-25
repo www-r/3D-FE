@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import Image from 'next/image'
 import Link from 'next/link'
-import Logout from '../logout/Logout'
+import Logout from '../../logout/Logout'
 import { getToken, setToken } from '@/utils/token'
 import { cartCount } from '@/api/service/cart'
 import { useDispatch, useSelector } from 'react-redux'
 import { setItemCount } from '@/store/cartSlice'
 import { RootState } from '@/store/store'
+import OrderHistoryButton from './OrderHistoryButton'
 
 export default function Header() {
   const [accessToken, setAccessToken] = useState(false)
@@ -80,9 +81,12 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="leading-[4.4rem]">
-                  <Link href="/my-page/history" className="text-neutral-navy-100">
-                    주문 내역
-                  </Link>
+                  <OrderHistoryButton
+                    setSelectedTab={function (prev: boolean): void {
+                      throw new Error('Function not implemented.')
+                    }}
+                    selectedTab={false}
+                  />
                 </li>
                 <Logout setAccessToken={setAccessToken} />
               </ul>

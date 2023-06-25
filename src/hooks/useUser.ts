@@ -1,5 +1,6 @@
 import { UserId } from '@/api/interface/auth'
 import { getUser } from '@/api/service/auth'
+import { getUserInfo } from '@/api/service/myPage'
 import { getToken } from '@/utils/token'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 
@@ -14,7 +15,8 @@ export const useUser = () => {
       if (!userId) {
         return null
       } else {
-        getUser(userId.userId)
+        getUserInfo(userId.userId)
+        // getUser(userId.userId)
       }
     },
   })

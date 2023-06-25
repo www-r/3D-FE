@@ -1,17 +1,35 @@
+import React, { useState, Dispatch, SetStateAction } from 'react'
 import Image from 'next/image'
-
 import { Review } from '@/api/interface/review'
-import Star from '../common/Rating'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/store/store'
+import ReviewMenu from './ReviewMenu'
 
 interface Props {
   review: Review
+  assetId: number
+  isShownCreateReview: boolean
+  setIsShownCreateReview: Dispatch<SetStateAction<boolean>>
+  setIsEditMode: Dispatch<SetStateAction<boolean>>
 }
 
-export default function ReviewItem({ review }: Props) {
-  const toggleModal = () => {}
+export default function ReviewItem({
+  review,
+  assetId,
+  setIsShownCreateReview,
+  setIsEditMode,
+}: Props) {
+  const userId = useSelector((state: RootState) => state.user.userId)
+  const [isShownReviewMenu, setIsShownReviewMenu] = useState(false)
+
+  const toggleMenu = () => {
+    setIsShownReviewMenu((prev) => !prev)
+  }
+
+  console.log({ review })
 
   return (
-    <section className="mb-[0.8rem] w-full bg-neutral-navy-900">
+    <li className="mb-[0.8rem] w-full rounded-[0.4rem] bg-neutral-navy-900">
       <div className="px-[1.2rem] py-[0.8rem]">
         <div className="mb-[0.8rem] flex h-[3.8rem] items-center justify-between text-mm font-normal">
           <div className="text-neutral-navy-200">
@@ -20,16 +38,28 @@ export default function ReviewItem({ review }: Props) {
               {review.firstName}
             </span>
           </div>
-          <div className="flex">
-            <button onClick={toggleModal}>
-              <Image src="/icons/moreVertical.svg" alt="menu" width={24} height={24} />
-            </button>
-          </div>
+          <span>Rating : {review.rating}</span>
+          {review?.userId === userId && (
+            <div className="relative flex">
+              <button onClick={toggleMenu}>
+                <Image src="/icons/moreVertical.svg" alt="menu" width={24} height={24} />
+              </button>
+              {isShownReviewMenu && (
+                <ReviewMenu
+                  reviewId={review.reviewId}
+                  assetId={assetId}
+                  setIsShownCreateReview={setIsShownCreateReview}
+                  setIsEditMode={setIsEditMode}
+                  setIsShownReviewMenu={setIsShownReviewMenu}
+                />
+              )}
+            </div>
+          )}
         </div>
         <div className="mb-[0.8rem] text-mm  font-normal text-neutral-navy-100">
           <span>{review.content}</span>
         </div>
       </div>
-    </section>
+    </li>
   )
 }
