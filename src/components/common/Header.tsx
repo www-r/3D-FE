@@ -22,7 +22,8 @@ export default function Header() {
   }, [accessToken])
 
   // 유저 장바구니 개수 가져오기
-  const userId = useSelector((state: RootState) => state.user.userId) // 유저 아이디 확인필요
+  // const userId = useSelector((state: RootState) => state.user.userId) // 유저 아이디 확인필요
+  const userId = 1
   const dispatch = useDispatch()
 
   const { data: cartItemCount = 0, refetch } = useQuery(
