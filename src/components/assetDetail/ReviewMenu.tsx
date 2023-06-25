@@ -1,17 +1,31 @@
 import { usePostReview } from '@/hooks/usePostReview'
+import { setClickedReview } from '@/store/clickedReviewSlice'
 import React from 'react'
+import { useDispatch } from 'react-redux'
 
 interface Props {
   reviewId: number
   assetId: number
+  setIsShownCreateReview: (data: boolean) => void
+  setIsEditMode: (data: boolean) => void
 }
 
-export default function ReviewMenu({ reviewId, assetId }: Props) {
-  const { deleteMyReview } = usePostReview(assetId)
+export default function ReviewMenu({
+  reviewId,
+  assetId,
+  setIsShownCreateReview,
+  setIsEditMode,
+}: Props) {
+  const { deleteMyReview } = usePostReview(assetId, reviewId)
+  const dispatch = useDispatch()
 
-  const handleEdit = () => {}
+  const handleEdit = () => {
+    dispatch(setClickedReview(reviewId))
+    setIsShownCreateReview(true)
+    setIsEditMode(true)
+  }
   const handleDelete = () => {
-    deleteMyReview(reviewId)
+    deleteMyReview()
   }
 
   return (
