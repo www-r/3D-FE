@@ -7,8 +7,9 @@ import Link from 'next/link'
 import Logout from '../logout/Logout'
 import { getToken, setToken } from '@/utils/token'
 import { cartCount } from '@/api/service/cart'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setItemCount } from '@/store/cartSlice'
+import { RootState } from '@/store/store'
 
 export default function Header() {
   const [accessToken, setAccessToken] = useState(false)
@@ -21,7 +22,7 @@ export default function Header() {
   }, [accessToken])
 
   // 유저 장바구니 개수 가져오기
-  const userId = 7 // 유저 아이디 가져올예정
+  const userId = useSelector((state: RootState) => state.user.userId) // 유저 아이디 확인필요
   const dispatch = useDispatch()
 
   const { data: cartItemCount = 0, refetch } = useQuery(
