@@ -1,27 +1,31 @@
 import React from 'react'
-import CustomInput from '@/components/common/CustomInput'
+import CustomCheckbox from '../common/CustomCheckbox'
 
-export default function TableHeader({text}) {
+interface TableHeaderProps {
+  text: string,
+}
+
+export default function TableHeader({text}:TableHeaderProps) {
   return (
   
-    <thead className='border-neutral-navy-300 border-b'>
-      <tr className="w-[100%] text-neutral-navy-200 py-[0.8rem] text-sm">
-        <td className="w-[7.5%] text-center text-sm h-[4rem]">
-          <CustomInput id="all" />
+    <thead className=''>
+      <tr className="border-neutral-navy-300 border-b w-[100%] text-neutral-navy-200 text-sm">
+        <td className="w-[7.5%] text-center text-sm h-[4rem]  py-[1rem]">
+          <CustomCheckbox id="all" />
         </td>
-        <td className="w-[6.6%] text-sm text-center h-[4rem]">
+        <td className="w-[6.6%] text-sm text-center h-[4rem] py-[1rem] ">
           <p>대표이미지</p>
         </td>
-        <td className="w-[48.6%] text-sm h-[4rem]">
+        <td className="w-[48.6%] text-sm h-[4rem] py-[1rem] ">
           <p>이름 및 상세설명</p>
         </td>
-        <td className="w-[20.7%] pr-[2.4rem] text-right text-sm h-[4rem]">
+        <td className="w-[20.7%] pr-[2.4rem] text-right text-sm h-[4rem] py-[1rem] ">
           <p>가격</p>
         </td>
-        <td className="w-[8.3%] text-sm text-center h-[4rem]">
+        <td className="w-[8.3%] text-sm text-center h-[4rem] py-[1rem] ">
           <p>{text}</p>
         </td>
-        <td className="w-[8.3%] text-sm text-center h-[4rem]">
+        <td className="w-[8.3%] text-sm text-center h-[4rem] py-[1rem] ">
           <p>삭제</p>
         </td>
       </tr>

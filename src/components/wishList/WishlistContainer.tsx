@@ -39,11 +39,12 @@ interface WishlistContainerProps {
 }
 
 export default function WishlistContainer({text}:WishlistContainerProps) {
+
   return (
       <table className="mt-[3.2rem] max-w-[163rem] min-w-[91.9rem] w-[100%] text-neutral-navy-100">
         <TableHeader text={text}/>
         <tbody>
-          {assets.map((item)=><TableItem key={item.asset.assetId} assetId={item.asset.assetId} image={'ff'} assetName={item.asset.assetName} extension={item.asset.extension} size={item.asset.size} price={item.asset.price} icon={<CartIcon/>}/>)}
+          {assets.map((item)=><TableItem key={item.asset.assetId} assetId={item.asset.assetId} image={''} assetName={item.asset.assetName} extension={item.asset.extension} size={item.asset.size} price={item.asset.price} icon={<CartIcon/>}/>)}
         </tbody>
       </table>
 

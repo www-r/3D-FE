@@ -1,19 +1,34 @@
-import React from 'react'
-import CustomInput from '@/components/common/CustomInput'
-import {TrashIcon} from '@/components/common/Icon/Icons'
+"use client"
+import React , {useState} from 'react'
+import Image from 'next/image'
 import { formatPrice } from '@/utils/formatPrice'
+import CustomCheckbox from '../common/CustomCheckbox'
+import IconButton from './IconButton'
+import { CartIcon, BlueCartIcon, TrashIcon, BlueTrashIcon} from '@/components/common/Icon/Icons'
 
-export default function TableItem({assetId, image, assetName, extension, size, price , icon   }) {
+interface TableItemProps {
+  assetId:number,
+  image: string, 
+  assetName: string,
+  extension: string,
+  size: number,
+  price: number,
+  icon: React.ReactNode
+}
+
+
+export default function TableItem({assetId, image = '', assetName, extension, size, price , icon   }:TableItemProps) {
+    const [isChecked, setIsChecked] = useState(false)
   return (
     <>
-      <tr className="py-[0.8rem] border-b border-neutral-navy-300 ">
-      <td className='h-[10rem]'>
-        <CustomInput id={assetId} />
+    <tr className="border-b border-neutral-navy-300 " >
+      <td className='h-[10rem] py-[1rem] '>
+        <CustomCheckbox id={assetId} />
       </td>
-      <td className='h-[10rem]'> 
-        {/* <Image src={image} alt="asset" width={80} height={100} className="min-w-[8rem]" /> */}
+      <td className='h-[10rem] py-[1rem] '> 
+        <Image src={image} alt="asset" width={80} height={100} className="min-w-[8rem]" />
       </td>
-      <td className='h-[10rem]'>
+      <td className='h-[10rem] py-[1rem] '>
         <div className="px-[1.2rem]">
           <h4 className="text-[2rem] font-medium">{assetName}</h4>
           <ul className="flex flex-wrap items-center text-sm">
@@ -26,18 +41,18 @@ export default function TableItem({assetId, image, assetName, extension, size, p
           </ul>
         </div>
       </td>
-      <td className='h-[10rem]'>
+      <td className='h-[10rem] py-[1rem] '>
         <div className="px-[2.4rem] text-right text-sl">
-          <p>{formatPrice({price})}</p>
+          <p>{formatPrice(price)}</p>
         </div>
       </td>
-      <td className='h-[10rem]'>
-       {icon}
+      <td className='h-[10rem] py-[1rem]'>
+        <IconButton icon1={<CartIcon/>} icon2={<BlueCartIcon/>} />
       </td>
-      <td className='h-[10rem]'>
-       <TrashIcon/>
+      <td className='h-[10rem] py-[1rem]'>
+        <IconButton icon1={<TrashIcon/>} icon2={<BlueTrashIcon/>}/>
       </td>
-        </tr>
+    </tr>
     </>
   )
 }
