@@ -48,23 +48,3 @@ export default function PaymentInfo({ selectedItems }: PaymentInfoProps) {
     </div>
   )
 }
-
-// const route = useRouter()
-// const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([])
-
-// useEffect(() => {
-//   const selectedItemsString = localStorage.getItem('selectedItems')
-//   const parsedItems = selectedItemsString ? JSON.parse(selectedItemsString) : null
-//   if (parsedItems === null) {
-//     route.push('/cart')
-//   } else {
-//     setSelectedItems(parsedItems)
-//   }
-
-//   return () => {
-//     localStorage.removeItem('selectedItems')
-//   }
-// }, [route])
-
-// const totalPrice = selectedItems.reduce((acc, item) => acc + item.asset.price, 0)
-// const totalDiscount = selectedItems.reduce((acc, item) => acc + item.asset.discountPrice, 0)
