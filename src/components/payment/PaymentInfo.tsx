@@ -4,26 +4,15 @@ import { formatPrice } from '@/utils/formatPrice'
 import PaymentItem from './PaymentItem'
 import Title from '../common/Title'
 import { useRouter } from 'next/navigation'
+import { SubmitHandler } from 'react-hook-form'
 import { CartItemProps, Asset, SelectedItem } from '@/api/interface/cart'
+import { PaymentPayload } from '@/api/interface/payment'
 
-export default function PaymentInfo() {
-  const route = useRouter()
-  const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([])
+interface PaymentInfoProps {
+  selectedItems: SelectedItem[]
+}
 
-  useEffect(() => {
-    const selectedItemsString = localStorage.getItem('selectedItems')
-    const parsedItems = selectedItemsString ? JSON.parse(selectedItemsString) : null
-    if (parsedItems === null) {
-      route.push('/cart')
-    } else {
-      setSelectedItems(parsedItems)
-    }
-
-    return () => {
-      localStorage.removeItem('selectedItems')
-    }
-  }, [route])
-
+export default function PaymentInfo({ selectedItems }: PaymentInfoProps) {
   const totalPrice = selectedItems.reduce((acc, item) => acc + item.asset.price, 0)
   const totalDiscount = selectedItems.reduce((acc, item) => acc + item.asset.discountPrice, 0)
 
@@ -59,3 +48,23 @@ export default function PaymentInfo() {
     </div>
   )
 }
+
+// const route = useRouter()
+// const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([])
+
+// useEffect(() => {
+//   const selectedItemsString = localStorage.getItem('selectedItems')
+//   const parsedItems = selectedItemsString ? JSON.parse(selectedItemsString) : null
+//   if (parsedItems === null) {
+//     route.push('/cart')
+//   } else {
+//     setSelectedItems(parsedItems)
+//   }
+
+//   return () => {
+//     localStorage.removeItem('selectedItems')
+//   }
+// }, [route])
+
+// const totalPrice = selectedItems.reduce((acc, item) => acc + item.asset.price, 0)
+// const totalDiscount = selectedItems.reduce((acc, item) => acc + item.asset.discountPrice, 0)
