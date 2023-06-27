@@ -17,7 +17,6 @@ export default function MyOrderDetail() {
         <h1 className="mr-[3.4rem]">구매한 에셋 수</h1>
         <h1 className="mr-[2.2rem]">결제금액</h1>
       </div>
-      {/* <MyOrderHistoryItem orderHistory={OrderHistoryDrawer} /> */}
     </section>
   )
 }
