@@ -6,15 +6,15 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { ko } from 'date-fns/esm/locale' //한국어 설정
 import Image from 'next/image'
 import { getMonth, getYear } from 'date-fns'
-
-type CustomHeaderProps = {
-  date: Date
-  changeYear: (year: number) => void
-  decreaseMonth: () => void
-  increaseMonth: () => void
-  prevMonthButtonDisabled: boolean
-  nextMonthButtonDisabled: boolean
-}
+import { ReactDatePickerCustomHeaderProps } from 'react-datepicker'
+// type CustomHeaderProps = {
+//   date: Date
+//   changeYear: (year: number) => void
+//   decreaseMonth: () => void
+//   increaseMonth: () => void
+//   prevMonthButtonDisabled: boolean
+//   nextMonthButtonDisabled: boolean
+// }
 type CustomCalendarProps = {
   setGetStartDate: Dispatch<SetStateAction<string>>
   setGetEndDate: Dispatch<SetStateAction<string>>
@@ -44,14 +44,14 @@ export default function MyOrderCalendar() {
   ]
 
   // react-datePicker Header부분 커스텀 함수
-  const customRenderHeader: React.FC<CustomHeaderProps> = ({
+  const customRenderHeader = ({
     date,
     changeYear,
     decreaseMonth,
     increaseMonth,
     prevMonthButtonDisabled,
     nextMonthButtonDisabled,
-  }) => {
+  }:ReactDatePickerCustomHeaderProps) => {
     return (
       <div className={s.customHeaderContainer}>
         <button
