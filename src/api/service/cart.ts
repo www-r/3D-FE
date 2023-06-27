@@ -1,4 +1,5 @@
 import { axiosInstance } from '../axios'
+import { CartDeleteRequest, CartDeleteResponse } from '../interface/cart'
 
 export const cartCount = async (user: number) => {
   try {
@@ -15,5 +16,10 @@ export const cartCount = async (user: number) => {
 
 export const cartList = async (user: number) => {
   const res = await axiosInstance.get(`/s/user/${user}/cart`)
+  return res.data
+}
+
+export const cartDelete = async (T: CartDeleteRequest): Promise<CartDeleteResponse> => {
+  const res = await axiosInstance.post<CartDeleteResponse>('/s/cart/delete', T)
   return res.data
 }
