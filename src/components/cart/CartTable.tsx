@@ -88,23 +88,12 @@ export default function CartTable({
             item={item}
             onChecked={onChecked}
             isChecked={selectedCartIds.includes(String(item.cartId))}
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+            setSelectedCartIds={setSelectedCartIds}
           />
         ))}
       </tbody>
     </table>
   )
 }
-// const [cartItems, setCartItems] = useState<CartItemProps['item'][]>([])
-
-// useEffect(() => {
-//   const fetchCartItems = async () => {
-//     try {
-//       const response = await cartList(1)
-//       setCartItems(response.data)
-//       console.log(response.data)
-//     } catch (error) {
-//       console.log('Error fetching cart items:', error)
-//     }
-//   }
-//   fetchCartItems()
-// }, [])
