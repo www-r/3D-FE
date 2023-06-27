@@ -1,17 +1,29 @@
 'use client'
 
-import { Asset } from '@/api/interface/asset'
 import { formatPrice } from '@/utils/formatPrice'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import DetailList from './orderHistoryDetail/DetailList'
-import { OrderHistory, OrderHistoryResponseData } from '@/api/interface/payment'
+import {
+  OrderHistory,
+  OrderHistoryResponse,
+  OrderHistoryResponseData,
+} from '@/api/interface/payment'
 import { useDispatch } from 'react-redux'
 import { setClickedOrderHistory } from '@/store/clickedOrderHistorySlice'
 import { showOrderHistoryDetail } from '@/store/orderHistoryDetailSlice'
 
+// interface MyOrderHistoryItemProps {
+//   // orderHistory: OrderHistory
+//   orderHistory: OrderHistoryResponse['data']['orderList'][0]
+//   // orderHistory: OrderHistoryResponseData['data']['orderList'][0]
+// }
+
 interface MyOrderHistoryItemProps {
-  orderHistory: OrderHistory
+  orderHistory: {
+    orderId: number
+    orderNumber: string
+    orderDate: string
+    totalPrice: number
+    assetCount: number
+  }
 }
 
 export default function MyOrderHistoryItem({ orderHistory }: MyOrderHistoryItemProps) {
@@ -33,9 +45,8 @@ export default function MyOrderHistoryItem({ orderHistory }: MyOrderHistoryItemP
         <span className="mr-[18rem] text-[1.2rem] underline underline-offset-4">
           {orderHistory.orderNumber}
         </span>
-        <span className="mr-[0.5rem] pt-3">{orderHistory.assetCount}개</span>
+        <span className="mr-[0.5rem] pt-3">{orderHistory.assetCount}&nbsp;개</span>
         <span className="mr-[0.5rem] text-[1.2rem]">{formatPrice(orderHistory.totalPrice)}</span>
-        {/* <span className="mr-[0.5rem] text-[18px]">￦ {formatPrice(asset.price)}</span> */}
       </li>
     </>
   )

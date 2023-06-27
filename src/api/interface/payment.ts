@@ -30,15 +30,23 @@ export interface OrderHistoryData {
 
 //주문 내역
 export interface OrderHistoryResponseData extends FieldValues {
-  data: [
-    {
-      orderId: number
-      orderNumber: string
-      orderDate: Date | string
-      totalPrice: number
-      assetCount: number
-    },
-  ]
+  data: {
+    orderList: [
+      {
+        orderId: number
+        orderNumber: string
+        // orderDate: Date
+        orderDate: string
+        // orderDate: Date | string
+        totalPrice: number
+        assetCount: number
+      },
+    ]
+    size: number
+    currentPage: number
+    totalPage: number
+    totalElement: number
+  }
 }
 
 //주문내역 상세보기
