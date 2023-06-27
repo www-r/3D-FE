@@ -76,3 +76,20 @@ export interface OrderHistoryDetailResponseData extends FieldValues {
 
 export type OrderHistoryResponse = ApiResponse<OrderHistoryResponseData>
 export type OrderHistoryDetailResponse = ApiResponse<OrderHistoryDetailResponseData>
+
+// 주문하기
+export interface PaymentPayload {
+  assetList: number[]
+  email: string
+  firstName: string
+  lastName: string
+  phoneNumber: string
+  totalPrice: number
+  paymentTool: string
+}
+
+export interface OrderResponseData {
+  orderId: number
+}
+
+export type OrderResponse = ApiResponse<OrderResponseData>
