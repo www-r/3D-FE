@@ -31,7 +31,7 @@ export default function PaymentInfo() {
     <div className="sticky flex w-[23.9%] min-w-[26rem] flex-col justify-between border-l border-transparent-navy-30 px-[1.432%] pb-[3.222%] pt-[2.864%]">
       <div>
         <Title tit="상세정보" />
-        <ul className="max-h-[55vh] overflow-y-auto">
+        <ul className="max-h-[54vh] overflow-y-auto">
           {selectedItems.map((item: CartItemProps['item']) => (
             <PaymentItem key={item.cartId} item={item} />
           ))}
