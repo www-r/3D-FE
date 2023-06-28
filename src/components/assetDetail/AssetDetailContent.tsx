@@ -17,7 +17,7 @@ export default function AssetDetailContent({ asset }: Props) {
   return (
     <>
       <div className="h-[52.3rem] border-b border-transparent-navy-30 bg-bg-2 pt-[4.7rem]">
-        three.js
+        {/* <Image src="/icons/copy.svg" alt="copy" width={710} height={520} className="ml-[0.9rem]" /> */}
       </div>
       <article className="h-full px-6 pb-10 pt-6 text-neutral-navy-100">
         <div className="mb-6 flex h-[5.6rem] items-center justify-between">
@@ -45,6 +45,7 @@ export default function AssetDetailContent({ asset }: Props) {
         <div className="mb-6">
           <div className="flex h-[4.4rem] w-[100%] items-center border-t border-transparent-navy-30">
             <h3 className="w-1/2 border-r border-transparent-navy-30">확장자</h3>
+            <p className="ml-[1.6rem]">{asset.extension}</p>
           </div>
           <div className="flex h-[4.4rem] w-[100%] items-center border-t border-transparent-navy-30">
             <h3 className="w-1/2 border-r border-transparent-navy-30">평점</h3>
@@ -115,7 +116,7 @@ export default function AssetDetailContent({ asset }: Props) {
           </div>
         </div>
         <div className="mb-[2.4rem] bg-neutral-navy-900 px-3 py-4">
-          <div>태그 설명 부분 추가 해주면 넣어야함</div>
+          <div>{asset.description}</div>
         </div>
         <AssetTags tags={asset.tagList} />
         <div className="h-[10.5rem]"></div>

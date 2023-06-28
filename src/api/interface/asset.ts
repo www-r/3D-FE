@@ -4,7 +4,10 @@ export interface Asset {
   assetId: number
   assetName: string
   price: number
+  discount: number
+  discountPrice: string
   releaseDate: string
+  thumbnailUrl: string
   rating: number
   reviewCount: number
   wishCount: number
@@ -15,16 +18,21 @@ export interface Asset {
 export interface AssetDetail {
   assetId: number
   assetName: string
-  price: number
+  creator: string
+  description: string
+  discount: number
+  discountPrice: number
+  extension: string
   fileSize: number
   fileUrl: string
-  creator: string
+  previewList: []
+  price: number
   rating: number
   reviewCount: number
-  wishCount: number
-  visitCount: number
-  wishlistId: number
   tagList: string[]
+  wishCount: number
+  wishlistId: number
+  visitCount: number
 }
 
 interface AssetData {
