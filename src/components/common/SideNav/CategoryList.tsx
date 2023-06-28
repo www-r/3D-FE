@@ -17,12 +17,13 @@ export default function CategoryList({ categories }: Props) {
   const { name, tagList } = useSelector((state: RootState) => state.category)
   const dispatch = useDispatch()
 
+
   return (
     <>
       <div className="p-[0.8rem]">
         <div className="mb-[0.9rem] border-b border-neutral-navy-200 leading-[2.4rem]">
           <div className=" p-[0.8rem] text-neutral-navy-200">
-            <Link href="/category" className="flex">
+            <Link href="/" className="flex">
               <Image
                 src="/icons/list.svg"
                 alt="개별 에셋"
@@ -36,7 +37,7 @@ export default function CategoryList({ categories }: Props) {
           <ul>
             <li className=" cursor-pointer text-sm leading-[2.4rem]">
               <Link
-                href="/category"
+                href="/categories"
                 className="flex w-full justify-between py-[0.2rem] pl-[2.4rem] pr-[1.2rem] text-neutral-navy-200"
               >
                 <p className="flex">All</p>

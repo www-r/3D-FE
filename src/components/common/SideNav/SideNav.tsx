@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import CategoryList from './CategoryList'
 import CategoryAsset from './CategoryAsset'
-import { getAllCategory } from '@/api/service/category'
+import { getAllCategories } from '@/api/service/category'
 
 export default async function SideNav() {
-  // const { data } = await getAllCategory()
+  const data = await getAllCategories()
 
   return (
     <aside
@@ -19,7 +19,7 @@ export default async function SideNav() {
         <Image src="/icons/minimizeMenu.svg" alt="메뉴" width={24} height={24} />
       </div>
       <CategoryAsset />
-      {/* <CategoryList categories={data.categoryList} /> */}
+      <CategoryList categories={data} />
       <div className="mx-auto w-[20rem] bg-neutral-navy-900 leading-[3.8rem]">
         <Link href="/" className="flex justify-center text-neutral-navy-200">
           Neuroid&nbsp;<span className="text-primary-main">Beta</span>

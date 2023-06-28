@@ -19,7 +19,7 @@ export default function CategoryItem({ category }: Props) {
     (state: RootState) => state.category,
   )
 
-  console.log({ name }, { subName }, category.categoryName)
+  // console.log({ name }, { subName }, category.categoryName)
 
   const params = useParams()
 
@@ -31,7 +31,7 @@ export default function CategoryItem({ category }: Props) {
   // console.log({ categoryParams })
 
   const handleCategoryClick = (e: MouseEvent<HTMLLIElement>, category: Category) => {
-    e.stopPropagation()
+    // e.stopPropagation()
     dispatch(selectCategory(category))
     setIsOpened((prev) => !prev)
   }
@@ -57,28 +57,29 @@ export default function CategoryItem({ category }: Props) {
         <span>{category.categoryCount}</span>
       </li>
 
-      <ul>
-        {subCategoryList.map((item) => (
-          <li key={item.name} onClick={() => dispatch(selectSubCategory(item.name))}>
-            <Link
-              href={`/category/${name}/${item.name}`}
-              className="flex w-full justify-between py-[0.2rem] pl-[3.2rem] pr-[1.2rem] text-neutral-navy-200"
-            >
-              <p
-                className={
-                  `${item.name === subName && name === category.categoryName}` &&
-                  'text-primary-main'
-                }
+      {category.categoryName === name && (
+        <ul>
+          {subCategoryList.map((item) => (
+            <li key={item.name} onClick={() => dispatch(selectSubCategory(item.name))}>
+              <Link
+                href={`/categories/${name}/${item.name}`}
+                className="flex w-full justify-between py-[0.2rem] pl-[3.2rem] pr-[1.2rem] text-neutral-navy-200"
               >
-                {item.name}
-              </p>
-              <span className={`${item.name === subName && 'text-primary-main'}`}>
-                {item.count}
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+                <p
+                  className={`${
+                    item.name === subName && name === category.categoryName && 'text-primary-main'
+                  }`}
+                >
+                  {item.name}
+                </p>
+                <span className={`${item.name === subName && 'text-primary-main'}`}>
+                  {item.count}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </ul>
   )
 }
