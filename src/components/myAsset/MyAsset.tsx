@@ -13,7 +13,6 @@ export default function MyAsset() {
   const [selectedAsset, setSelectedAsset] = useState({ isClicked: false, count: 1 })
   //페이지네이션
   const [activePage, setActivePage] = useState(0)
-  const { assets } = useGetAssets(activePage, '', '')
   //에셋사이즈
   const [getSize, setGetSize] = useState(0)
   const { myAssets, isLoading } = useGetMyAssets({ page: activePage, size: getSize })
