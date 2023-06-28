@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 export default function MyAsset() {
   const [activePage, setActivePage] = useState(0)
-  const { assets } = useGetAssets(activePage)
+  const { assets } = useGetAssets(activePage, '', '')
 
   return (
     <section className="my-8 text-[1.4rem] text-neutral-navy-100">
