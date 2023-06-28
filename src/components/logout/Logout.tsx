@@ -16,6 +16,7 @@ export default function Logout({
       console.log(logout, '로그아웃 성공')
       removeCookie('accessToken')
       setAccessToken(false)
+      localStorage.removeItem('userId')
     },
   })
   const queryClient = useQueryClient()

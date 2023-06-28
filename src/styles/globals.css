@@ -66,6 +66,10 @@ input {
   outline: none;
 }
 
+.bg-checkbox-off {
+  background-image: url(/icons/checkboxOff.svg);
+}
+
 input[type='checkbox']:checked + label .bg-checkbox-off {
   background-image: url(/icons/checkboxOn.svg);
 }
