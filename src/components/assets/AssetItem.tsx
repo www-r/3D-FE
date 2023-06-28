@@ -13,11 +13,11 @@ interface Props {
 
 export default function AssetItem({ asset }: Props) {
   const dispatch = useDispatch()
-
   const handleClick = () => {
     dispatch(setClickedAsset(asset.assetId))
     dispatch(openDrawer())
   }
+
   return (
     <li>
       <button
@@ -26,7 +26,13 @@ export default function AssetItem({ asset }: Props) {
       focus:rounded-[0.4rem] focus:border-2 focus:border-primary-main"
       >
         <div className="h-[35rem] p-[0.4rem]">
-          <div className="rounded h-[26.6rem] rounded-[0.4rem] bg-gray-100"></div>
+          <Image
+            src={`https://asset-store-bucket.s3.ap-northeast-2.amazonaws.com/asset-store-bucket/${asset.thumbnailUrl}`}
+            alt="left"
+            width={216}
+            height={266}
+            className="rounded-[0.4rem]"
+          />
           <div>
             <div className="flex h-[3rem] items-center text-sm text-neutral-navy-200">
               <div className="flex">
