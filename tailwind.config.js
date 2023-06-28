@@ -53,8 +53,8 @@ module.exports = {
           red: '#933224',
           yellow: '#EAB737',
           green: '#11B0A8',
-          'green-hover': '#FF6651',
-          'red-text': '#07AAA2',
+          'red-text': '#FF6651',
+          'green-hover': '#07AAA2',
         },
         bg: {
           0: '#1A1C1F',
@@ -91,4 +91,4 @@ module.exports = {
       },
     },
   },
-}
+};
