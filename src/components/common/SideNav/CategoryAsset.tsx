@@ -17,7 +17,7 @@ export default function CategoryAsset() {
       </Link>
       <ul>
         <li>
-          <Link href="#" className="flex p-[0.8rem] pl-[2.4rem] text-neutral-navy-200">
+          <Link href="/" className="flex p-[0.8rem] pl-[2.4rem] text-neutral-navy-200">
             <Image
               src="/icons/box.svg"
               alt="개별 에셋"
