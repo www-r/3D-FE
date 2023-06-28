@@ -11,6 +11,7 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.360.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-query": "^4.29.7",
     "@tanstack/react-query-devtools": "^4.29.7",
@@ -19,6 +20,7 @@
     "@types/react-datepicker": "^4.11.2",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "^10.4.14",
+    "aws-sdk": "^2.1406.0",
     "axios": "^1.4.0",
     "cookies-next": "^2.1.2",
     "date-fns": "^2.30.0",
