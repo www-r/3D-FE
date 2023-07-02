@@ -27,7 +27,7 @@ export default function AssetItem({ asset }: Props) {
       >
         <div className="h-[35rem] p-[0.4rem]">
           <Image
-            src={`${process.env.NEXT_PUBLIC_S3_URL}${asset.thumbnailUrl}`}
+            src={`${process.env.NEXT_PUBLIC_S3_URL}/${asset.thumbnailUrl}`}
             alt="left"
             width={216}
             height={266}
