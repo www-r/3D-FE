@@ -7,7 +7,7 @@ import { useGetAssets } from '@/hooks/useGetAssets'
 
 export default function IndividualAsset() {
   const [activePage, setActivePage] = useState(0)
-  const { assets } = useGetAssets(activePage, '', '')
+  const { assets } = useGetAssets(activePage)
 
   return (
     <section className="min-h-[calc(100vh-12.3rem)] px-[2.3rem] pt-8">
