@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function AssetDetailContent({ asset }: Props) {
-
   const handleCopy = () => {
     navigator.clipboard.writeText(asset.fileUrl)
   }
@@ -19,7 +18,7 @@ export default function AssetDetailContent({ asset }: Props) {
     <>
       <div className="h-[52.3rem] border-b border-transparent-navy-30 bg-bg-2 pt-[4.7rem]">
         <Image
-          src={`https://asset-store-bucket.s3.ap-northeast-2.amazonaws.com/asset-store-bucket/thumbnail/2023/06/27/1d26689e-0451-461d-83ad-cd006f114eb0.png`}
+          src={`${process.env.NEXT_PUBLIC_S3_URL}/thumbnail/2023/06/27/1d26689e-0451-461d-83ad-cd006f114eb0.png`}
           alt="detail"
           width={385}
           height={120}
