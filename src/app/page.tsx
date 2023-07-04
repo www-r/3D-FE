@@ -14,11 +14,9 @@ export default function HomePage() {
           <IndividualAsset />
           <Footer />
         </div>
-        <section className="sticky top-[7.2rem] h-[calc(100vh-7.2rem)] ">
-          <Drawer>
-            <AssetDetail />
-          </Drawer>
-        </section>
+        <Drawer>
+          <AssetDetail />
+        </Drawer>
       </div>
     </Layout>
   )
