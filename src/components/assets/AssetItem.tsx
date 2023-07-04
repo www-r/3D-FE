@@ -22,7 +22,7 @@ export default function AssetItem({ asset }: Props) {
     <li>
       <button
         onClick={handleClick}
-        className="h-[35.8rem] min-w-[22.4rem] hover:rounded-[0.4rem] hover:border-2 hover:border-primary-main
+        className="h-[35.8rem] min-w-[22.4rem] border-2 border-transparent-0 hover:rounded-[0.4rem] hover:border-2 hover:border-primary-main
       focus:rounded-[0.4rem] focus:border-2 focus:border-primary-main"
       >
         <div className="h-[35rem] p-[0.4rem]">
